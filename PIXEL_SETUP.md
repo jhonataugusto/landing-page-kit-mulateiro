@@ -27,9 +27,10 @@ src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"
 
 O projeto já está configurado para rastrear:
 
-- ✅ **PageView** - Visualização de página (automático)
-- ✅ **Lead** - Cliques em botões CTA (automático)
-- ✅ **InitiateCheckout** - Cliques nos botões de compra dos kits
+- ✅ **PageView** - Visualização de página (automático no index.html)
+- ✅ **ViewContent** - Visualização de conteúdo (disparado automaticamente ao carregar a página)
+- ✅ **Lead** - Cliques em botões CTA (automático em todos os botões)
+- ✅ **InitiateCheckout** - Cliques nos botões de compra dos kits (com valor e moeda)
 
 ### 4. Eventos Disponíveis (Opcional)
 
@@ -55,12 +56,27 @@ trackAddToCart({
 
 ## 📈 Eventos Configurados
 
+### Páginas
+- **Home (/)**: Dispara `ViewContent` automaticamente ao carregar
+- **Oferta (/oferta)**: Dispara `ViewContent` automaticamente ao carregar
+
 ### Botões de Compra (FinalCTA)
 - **Kit Completo**: Rastreia `InitiateCheckout` com valor R$ 441,60
 - **Kit Corporal**: Rastreia `InitiateCheckout` com valor R$ 280,00
 
 ### Botões CTA Gerais
 - Todos os botões CTA rastreiam automaticamente o evento `Lead`
+
+## 🔍 Eventos que o Facebook Verá
+
+Após configurar, você verá no Facebook Events Manager:
+
+1. **PageView** - Toda vez que alguém acessa a página
+2. **ViewContent** - Quando a página carrega (indica visualização do produto)
+3. **Lead** - Quando alguém clica em qualquer botão CTA
+4. **InitiateCheckout** - Quando alguém clica nos botões de compra
+
+**Importante**: O evento `Purchase` (compra finalizada) precisa ser configurado na sua loja (Nuvemshop) quando a compra for concluída.
 
 ## 🔍 Verificar se Está Funcionando
 

@@ -12,7 +12,20 @@
 
 // Verifica se o Facebook Pixel está carregado
 const isPixelLoaded = () => {
-    return typeof window !== 'undefined' && window.fbq;
+    if (typeof window === 'undefined') return false;
+    
+    // Aguarda um pouco para garantir que o pixel foi carregado
+    if (!window.fbq) {
+        // Tenta novamente após 100ms
+        setTimeout(() => {
+            if (window.fbq) {
+                return true;
+            }
+        }, 100);
+        return false;
+    }
+    
+    return true;
 };
 
 /**
@@ -39,11 +52,25 @@ export const trackPurchase = ({ value, currency = 'BRL', contentName = 'Kit de M
  * @param {string} params.contentCategory - Categoria (opcional)
  */
 export const trackViewContent = ({ contentName, contentCategory = 'Kit de Mulateiro' }) => {
-    if (isPixelLoaded()) {
-        window.fbq('track', 'ViewContent', {
-            content_name: contentName,
-            content_category: contentCategory
-        });
+    // Aguarda o pixel carregar antes de disparar
+    const tryTrack = () => {
+        if (typeof window !== 'undefined' && window.fbq) {
+            window.fbq('track', 'ViewContent', {
+                content_name: contentName,
+                content_category: contentCategory
+            });
+            console.log('✅ Facebook Pixel: ViewContent disparado', { contentName, contentCategory });
+            return true;
+        }
+        return false;
+    };
+
+    // Tenta imediatamente
+    if (!tryTrack()) {
+        // Se não funcionou, tenta novamente após 500ms
+        setTimeout(() => {
+            tryTrack();
+        }, 500);
     }
 };
 
@@ -52,10 +79,11 @@ export const trackViewContent = ({ contentName, contentCategory = 'Kit de Mulate
  * @param {string} buttonName - Nome do botão clicado
  */
 export const trackCTA = (buttonName) => {
-    if (isPixelLoaded()) {
+    if (typeof window !== 'undefined' && window.fbq) {
         window.fbq('track', 'Lead', {
             content_name: buttonName
         });
+        console.log('✅ Facebook Pixel: Lead disparado', { buttonName });
     }
 };
 
@@ -66,11 +94,14 @@ export const trackCTA = (buttonName) => {
  * @param {string} params.currency - Moeda (padrão: 'BRL')
  */
 export const trackInitiateCheckout = ({ value, currency = 'BRL' }) => {
-    if (isPixelLoaded()) {
+    if (typeof window !== 'undefined' && window.fbq) {
         window.fbq('track', 'InitiateCheckout', {
             value: value,
             currency: currency
         });
+        console.log('✅ Facebook Pixel: InitiateCheckout disparado', { value, currency });
+    } else {
+        console.warn('⚠️ Facebook Pixel não está carregado');
     }
 };
 

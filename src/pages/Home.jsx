@@ -1,10 +1,11 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import Hero from '../sections/Hero';
 import WhatIsKit from '../sections/WhatIsKit';
 import Benefits from '../sections/Benefits';
 import MiniCTA from '../components/MiniCTA';
 import FloatingCTA from '../components/FloatingCTA';
 import { LazySection } from '../components/LazySection';
+import { trackViewContent } from '../utils/pixel';
 
 // Lazy load de componentes abaixo da dobra para reduzir JavaScript inicial
 const WhyItWorks = lazy(() => import('../sections/WhyItWorks'));
@@ -19,6 +20,14 @@ const SummaryCTA = lazy(() => import('../sections/SummaryCTA'));
 const Disclaimer = lazy(() => import('../sections/Disclaimer'));
 
 export default function Home() {
+    // Dispara evento ViewContent quando a página carrega
+    useEffect(() => {
+        trackViewContent({
+            contentName: 'Kit de Mulateiro - Landing Page',
+            contentCategory: 'Skincare Natural'
+        });
+    }, []);
+
     return (
         <div className="App">
             <main>
