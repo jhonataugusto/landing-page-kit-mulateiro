@@ -19,7 +19,7 @@ export default function TargetAudience() {
                     Você está cansada de produtos cheios de químicos agressivos que irritam sua pele
                 </BenefitItem>
                 <BenefitItem>
-                    Você quer resultados em 30 dias, não em 6 meses de espera
+                    Você quer resultados em 7 dias, não em 6 meses de espera
                 </BenefitItem>
                 <BenefitItem>
                     Você tem manchas, linhas finas ou pele sem brilho que te incomodam
@@ -41,7 +41,7 @@ export default function TargetAudience() {
             {/* CTA */}
             <div className="mt-2xl text-center">
                 <CTAButton href="/oferta">
-                    Sim, Este Kit É Para Mim
+                    SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
                 </CTAButton>
             </div>
         </Section>

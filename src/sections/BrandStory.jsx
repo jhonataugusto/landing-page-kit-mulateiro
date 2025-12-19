@@ -1,5 +1,6 @@
 import React, { useState, useCallback, memo } from 'react';
 import Section from '../components/Section';
+import CTAButton from '../components/CTAButton';
 
 const BrandStory = memo(function BrandStory() {
     const [loadedVideos, setLoadedVideos] = useState(new Set());
@@ -187,7 +188,7 @@ const BrandStory = memo(function BrandStory() {
                     </div>
                 </div>
 
-                <div className="mt-2xl p-xl bg-primary/5 rounded-lg border-l-4 border-primary">
+                <div className="mt-2xl p-xl bg-primary/5 rounded-lg border-l-4 border-primary mb-xl">
                     <p className="text-base md:text-lg italic text-primary font-medium leading-relaxed m-0">
                         "Cada produto reflete nossa história de amor pela beleza que vem da floresta.
                         Acreditamos que cuidar da pele é um ato de amor próprio, e estamos aqui para
@@ -196,6 +197,13 @@ const BrandStory = memo(function BrandStory() {
                     <p className="mt-md text-sm text-textLight font-semibold">
                         — Equipe Beleza da Floresta
                     </p>
+                </div>
+
+                {/* CTA */}
+                <div className="text-center">
+                    <CTAButton href="/oferta">
+                        COMECE SUA TRANSFORMAÇÃO HOJE COM 10% OFF
+                    </CTAButton>
                 </div>
             </div>
         </Section>

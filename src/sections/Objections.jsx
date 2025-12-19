@@ -1,5 +1,6 @@
 import React from 'react';
 import Section from '../components/Section';
+import CTAButton from '../components/CTAButton';
 
 export default function Objections() {
     return (
@@ -49,7 +50,7 @@ export default function Objections() {
                             "Quanto tempo para ver resultados?"
                         </h3>
                         <p className="text-textLight leading-relaxed m-0">
-                            <strong>Primeiros resultados em 7-15 dias:</strong> pele mais macia, textura melhorada, brilho natural. <strong>Transformação completa em 30 dias:</strong> manchas clareadas, linhas reduzidas, pele firme e radiante. E você tem nossa <strong>Garantia de Satisfação com Continuidade Exclusiva</strong> — se não sentir melhora, oferecemos 50% de desconto no próximo pedido com orientação personalizada.
+                            <strong>Resultados visíveis em apenas 7 dias:</strong> pele mais macia, textura melhorada, brilho natural, início do clareamento de manchas. <strong>Transformação completa em 30 dias:</strong> manchas clareadas, linhas reduzidas, pele firme e radiante. E você tem nossa <strong>Garantia de Satisfação com Continuidade Exclusiva</strong> — se após 30 dias não sentir melhora, oferecemos 50% de desconto no próximo pedido com orientação personalizada.
                         </p>
                     </div>
 
@@ -62,6 +63,13 @@ export default function Objections() {
                             Entendemos sua frustração. Por isso oferecemos <strong>Garantia de Satisfação com Continuidade Exclusiva</strong> — se após 30 dias você não sentir melhora, oferecemos 50% de desconto no próximo pedido com orientação personalizada dos nossos especialistas. A diferença aqui é que usamos <strong>ingredientes naturais da floresta</strong>, sem químicos agressivos que podem irritar. Mais de 193 mil mulheres já comprovaram que funciona.
                         </p>
                     </div>
+                </div>
+
+                {/* CTA */}
+                <div className="mt-2xl text-center">
+                    <CTAButton href="/oferta">
+                        COMECE SUA TRANSFORMAÇÃO HOJE COM 10% OFF
+                    </CTAButton>
                 </div>
             </div>
         </Section>

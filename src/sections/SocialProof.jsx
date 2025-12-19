@@ -146,11 +146,11 @@ const SocialProof = () => {
         return `https://img.youtube.com/vi/${videoId}/${quality}.jpg`;
     }, []);
 
-    const loadVideo = useCallback((videoIndex) => {
+    const loadVideo = useCallback((videoId) => {
         const loadIframe = () => {
             setLoadedVideos(prev => {
-                if (prev.has(videoIndex)) return prev;
-                return new Set([...prev, videoIndex]);
+                if (prev.has(videoId)) return prev;
+                return new Set([...prev, videoId]);
             });
         };
         
@@ -172,6 +172,31 @@ const SocialProof = () => {
 
         return () => clearInterval(interval);
     }, [isAutoPlaying, videos.length]);
+
+    // Descarregar vídeos que não estão mais visíveis
+    useEffect(() => {
+        const visibleVideoIds = new Set();
+        const totalVideos = videos.length;
+
+        // Adicionar os IDs dos vídeos visíveis (prev, current, next)
+        for (let i = -1; i <= 1; i++) {
+            let index = currentIndex + i;
+            if (index < 0) index = totalVideos + index;
+            if (index >= totalVideos) index = index - totalVideos;
+            visibleVideoIds.add(videos[index].youtubeId);
+        }
+
+        // Remover vídeos que não estão mais visíveis
+        setLoadedVideos(prev => {
+            const newSet = new Set();
+            prev.forEach(videoId => {
+                if (visibleVideoIds.has(videoId)) {
+                    newSet.add(videoId);
+                }
+            });
+            return newSet;
+        });
+    }, [currentIndex, videos]);
 
     const goToSlide = useCallback((index) => {
         requestAnimationFrame(() => {
@@ -262,10 +287,9 @@ const SocialProof = () => {
                         onMouseEnter={handleVideoInteraction}
                     >
                         {visibleVideos.map((video, idx) => {
-                            const videoIndex = videos.findIndex(v => v.id === video.id);
                             return (
                                 <div
-                                    key={`${video.id}-${idx}`}
+                                    key={`${video.youtubeId}-${idx}`}
                                     className={`carousel-item ${video.position === 0 ? 'active' : ''} ${video.position < 0 ? 'prev' : ''} ${video.position > 0 ? 'next' : ''}`}
                                     onMouseEnter={handleVideoInteraction}
                                 >
@@ -273,11 +297,11 @@ const SocialProof = () => {
                                         <div 
                                             className="reel-thumbnail relative pb-[177.78%] h-0 overflow-hidden rounded-md cursor-pointer"
                                             onClick={() => {
-                                                setPlayingVideos(prev => new Set([...prev, videoIndex]));
-                                                loadVideo(videoIndex);
+                                                setPlayingVideos(prev => new Set([...prev, video.youtubeId]));
+                                                loadVideo(video.youtubeId);
                                             }}
                                         >
-                                            {loadedVideos.has(videoIndex) ? (
+                                            {loadedVideos.has(video.youtubeId) ? (
                                                 <iframe
                                                     width="100%"
                                                     height="100%"

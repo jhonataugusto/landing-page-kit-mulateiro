@@ -10,7 +10,6 @@ import { LazySection } from '../components/LazySection';
 const WhyItWorks = lazy(() => import('../sections/WhyItWorks'));
 const MulateiroOrigin = lazy(() => import('../sections/MulateiroOrigin'));
 const BrandStory = lazy(() => import('../sections/BrandStory'));
-const CompleteRitual = lazy(() => import('../sections/CompleteRitual'));
 const TargetAudience = lazy(() => import('../sections/TargetAudience'));
 const Objections = lazy(() => import('../sections/Objections'));
 const TrustBadges = lazy(() => import('../sections/TrustBadges'));
@@ -39,13 +38,6 @@ export default function Home() {
             <LazySection>
                 <BrandStory />
             </LazySection>
-            <LazySection>
-                <CompleteRitual />
-            </LazySection>
-            <MiniCTA 
-                text="Agora que você viu os kits disponíveis, descubra qual é perfeito para você"
-                emoji="💚"
-            />
             <LazySection>
                 <TargetAudience />
             </LazySection>

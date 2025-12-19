@@ -7,16 +7,23 @@ export default function SummaryCTA() {
         <Section background="gradient-primary">
             <div className="max-w-3xl mx-auto text-center text-white">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl mb-lg text-white flex flex-wrap items-center justify-center gap-sm">
-                    <span>👇</span>
-                    <span>Pronta para Transformar Sua Pele?</span>
+                    <span>🔥</span>
+                    <span>VOCÊ TEM DUAS ESCOLHAS AGORA:</span>
                 </h2>
 
                 <div className="mb-xl text-center max-w-2xl mx-auto">
-                    <p className="text-lg md:text-xl text-white mb-lg leading-relaxed">
-                        Garanta agora seu Kit de Mulateiro com <strong>10% de DESCONTO</strong> na primeira compra
-                    </p>
-                    <p className="text-base md:text-lg text-white/90 mb-lg leading-relaxed">
-                        Comece hoje seu ritual de beleza natural e veja a diferença ainda neste mês!
+                    <div className="bg-red-500/20 border-2 border-red-500/40 p-lg rounded-lg mb-md backdrop-blur-md text-left">
+                        <p className="text-lg md:text-xl text-white mb-md leading-relaxed">
+                            <strong>❌</strong> Fechar essa página, continuar se sentindo mal, se escondendo, testando mais um produto que não vai funcionar…
+                        </p>
+                    </div>
+                    <div className="bg-green-500/20 border-2 border-green-500/40 p-lg rounded-lg mb-lg backdrop-blur-md text-left">
+                        <p className="text-lg md:text-xl text-white mb-0 leading-relaxed">
+                            <strong>✅</strong> Clicar no botão, garantir seu Kit com frete grátis e ver resultado em 7 dias.
+                        </p>
+                    </div>
+                    <p className="text-xl md:text-2xl text-white font-bold mb-lg leading-relaxed">
+                        ⚠️ A decisão é sua. Mas o tempo da sua pele não espera.
                     </p>
                 </div>
 
@@ -50,9 +57,19 @@ export default function SummaryCTA() {
                     </div>
                 </div>
 
+                <div className="mb-xl p-lg bg-white/15 rounded-lg backdrop-blur-md max-w-2xl mx-auto">
+                    <p className="text-base md:text-lg text-white mb-md leading-relaxed">
+                        <strong>🔒 Garantia:</strong> Se você usar por 30 dias e não sentir sua pele diferente — mais firme, mais clara, mais viva — você ganha <strong>50% de desconto no próximo pedido</strong> + acompanhamento com nossos especialistas em cuidados naturais.
+                    </p>
+                </div>
+
                 <CTAButton href="/oferta">
-                    QUERO MINHA PELE RENOVADA COM O PODER DO MULATEIRO
+                    QUERO RESULTADO EM 7 DIAS – GARANTIR MEU KIT AGORA
                 </CTAButton>
+
+                <p className="mt-lg text-base md:text-lg text-white/90 italic max-w-2xl mx-auto">
+                    Essa é sua chance de dizer <strong>"basta"</strong>. Basta de cremes genéricos. Basta de promessas falsas. Basta de se sentir invisível. O Kit Mulateiro é o ritual que devolveu a autoestima de mais de 193 mil mulheres. Agora é a sua vez.
+                </p>
             </div>
         </Section>
     );

@@ -1,5 +1,6 @@
 import React, { useState, useCallback, memo } from 'react';
 import Section from '../components/Section';
+import CTAButton from '../components/CTAButton';
 
 const MulateiroOrigin = memo(function MulateiroOrigin() {
     const [loadedVideo1, setLoadedVideo1] = useState(false);
@@ -49,8 +50,8 @@ const MulateiroOrigin = memo(function MulateiroOrigin() {
                 </h2>
 
                 <p className="text-base md:text-lg text-textLight leading-relaxed mb-xl max-w-2xl mx-auto">
-                    Queremos te apresentar nossas raízes! Preparamos uma série documental onde cada episódio contará um pouco da nossa origem, cultura e inspiração para nossos produtos. 
-                    Hoje te apresentamos o episódio de número 4: <strong className="text-primary">Árvore do Mulateiro</strong>!
+                    Conheça o ingrediente mais precioso da floresta amazônica: o <strong className="text-primary">Mulateiro</strong>. 
+                    Descubra de onde vem esse poder natural que está transformando a rotina de beleza de milhares de mulheres.
                 </p>
 
                 {/* Vídeo 1 - Árvore do Mulateiro */}
@@ -145,13 +146,20 @@ const MulateiroOrigin = memo(function MulateiroOrigin() {
                     </div>
                 </div>
 
-                <div className="mt-xl p-lg bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg border-l-4 border-primary text-left max-w-2xl mx-auto">
+                <div className="mt-xl p-lg bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg border-l-4 border-primary text-left max-w-2xl mx-auto mb-xl">
                     <p className="text-base md:text-lg text-textLight leading-relaxed m-0">
                         Descubra a origem do ingrediente mais precioso da floresta amazônica. 
-                        Neste episódio, você vai conhecer de perto a <strong className="text-primary">Árvore do Mulateiro</strong>, 
+                        Você vai conhecer de perto a <strong className="text-primary">Árvore do Mulateiro</strong>, 
                         entender como ela é cultivada e colhida, e descobrir por que esse ingrediente natural 
                         é tão poderoso para transformar sua pele.
                     </p>
+                </div>
+
+                {/* CTA */}
+                <div className="text-center">
+                    <CTAButton href="/oferta">
+                        QUERO RESULTADO EM 7 DIAS – GARANTIR MEU KIT AGORA
+                    </CTAButton>
                 </div>
             </div>
         </Section>

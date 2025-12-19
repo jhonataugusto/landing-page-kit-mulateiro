@@ -27,11 +27,11 @@ export default function Hero() {
         <Section background="gradient-primary" className="fade-in">
             <div className="text-center text-white py-xl">
                 <h1 className="text-white mb-md text-[clamp(1.75rem,5vw,2.5rem)] leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
-                    🌿 Pele Nova, Corpo Renovado: O Poder do Mulateiro Que Está Transformando a Rotina de Beleza de Milhares de Mulheres
+                    Pele mais clara, firme e jovem em 7 dias – com o segredo da floresta amazônica que já mudou a vida de 193 mil mulheres
                 </h1>
 
-                <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-lighter mb-md max-w-3xl mx-auto leading-relaxed">
-                    O ritual que clareia manchas, suaviza linhas, rejuvenesce a pele e perfuma seu corpo — usando o ingrediente mais precioso da floresta amazônica: o Mulateiro.
+                <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-lighter mb-lg max-w-3xl mx-auto leading-relaxed font-bold bg-red-500/20 border-2 border-red-500/40 px-lg py-md rounded-lg">
+                    ⚠️ Estoque limitado. Garanta seu ritual antes que acabe o lote atual.
                 </p>
 
                 {/* Social Proof Badge */}
@@ -44,40 +44,55 @@ export default function Hero() {
                     <span>✨ Mais de 193 mil mulheres já confiam na Beleza da Floresta</span>
                 </div>
 
+                <div className="max-w-3xl mx-auto mb-lg p-lg bg-white/10 rounded-lg backdrop-blur-md text-left">
+                    <p className="text-base md:text-lg text-white/95 mb-md leading-relaxed">
+                        Você se olha no espelho e vê as manchas que não saem. As linhas finas crescendo. A pele opaca, morta.
+                    </p>
+                    <p className="text-base md:text-lg text-white/95 mb-md leading-relaxed">
+                        E aquela sensação nojenta de ter gastado uma fortuna pra absolutamente nada.
+                    </p>
+                    <p className="text-base md:text-lg text-white/95 mb-md leading-relaxed">
+                        Já testou de tudo: creme francês, ácido do TikTok, tratamento caro… e tudo o que ganhou foi frustração e mais insegurança.
+                    </p>
+                    <p className="text-base md:text-lg text-white/95 mb-0 leading-relaxed font-semibold">
+                        Mas o problema não é você.
+                    </p>
+                    <p className="text-base md:text-lg text-white/95 mb-0 leading-relaxed">
+                        O problema são esses produtos cheios de promessas e químicos agressivos que só mascaram — e não tratam.
+                    </p>
+                </div>
+
                 <div className="flex flex-col gap-md items-center mb-xl">
                     <div className="bg-white/10 px-md py-sm rounded-md backdrop-blur-md">
-                        🌿 Ingredientes 100% Naturais
+                        🌿 100% Natural - Direto da Floresta Amazônica
                     </div>
                     <div className="bg-white/10 px-md py-sm rounded-md backdrop-blur-md">
-                        🌸 Pele firme, radiante e sem manchas
+                        ⚡ Resultados visíveis em apenas 7 dias
                     </div>
                     <div className="bg-white/10 px-md py-sm rounded-md backdrop-blur-md">
-                        ⏳ Resultados visíveis em até 30 dias
-                    </div>
-                    <div className="bg-white/10 px-md py-sm rounded-md backdrop-blur-md">
-                        💚 10% de desconto na sua primeira compra
+                        💚 10% OFF na primeira compra + Frete Grátis
                     </div>
                 </div>
 
                 <CTAButton href="/oferta">
-                    👉 Escolha seu Kit e sinta a transformação
+                    COMECE SUA TRANSFORMAÇÃO HOJE COM 10% OFF
                 </CTAButton>
 
                 {/* VÍDEO: Hero Product Video */}
                 <div className="hero-image-shell">
                     <div className="hero-image-frame text-sm text-white/60 font-semibold text-center">
                         <div 
-                            className="relative w-full pb-[56.25%] h-0 overflow-hidden cursor-pointer rounded-lg shadow-2xl"
+                            className="relative w-full pb-[56.25%] h-0 overflow-hidden cursor-pointer rounded-lg"
                             onClick={loadVideo}
                         >
                             {loadedVideo ? (
                                 <iframe
                                     width="100%"
                                     height="100%"
-                                    src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&enablejsapi=0&autoplay=1&controls=1&playsinline=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
+                                    src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&enablejsapi=0&controls=1&playsinline=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
                                     title="Kit de Mulateiro - Beleza da Floresta"
                                     frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
                                     loading="lazy"
                                     className="absolute top-0 left-0 w-full h-full rounded-lg"

@@ -35,7 +35,8 @@ export default function FinalCTA() {
 
                         {/* Descrição */}
                         <p className="text-sm md:text-base mb-6 md:mb-8 opacity-95">
-                            Para quem quer o tratamento completo facial e resultados visíveis em 30 dias
+                            <strong>Esfoliante + Máscara + Sabonete + Creme Anti-idade</strong><br/>
+                            Resultados visíveis em apenas 7 dias
                         </p>
 
                         {/* Lista de produtos */}
@@ -68,30 +69,46 @@ export default function FinalCTA() {
 
                         {/* Preço */}
                         <div className="mb-6 md:mb-8">
+                            <div className="text-sm md:text-base opacity-90 mb-1 line-through">
+                                De R$ 490
+                            </div>
                             <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-2">
                                 R$ 441,60
                             </div>
                             <div className="text-sm md:text-base opacity-90">
-                                ou 3x de R$ 147,20 sem juros
+                                ou 3x de R$ 147,20 SEM JUROS
                             </div>
                             <div className="text-xs md:text-sm mt-2 opacity-90 font-semibold">
-                                → Ganhe 10% OFF na 1ª compra
+                                → 10% OFF na primeira compra
+                            </div>
+                            <div className="text-xs md:text-sm mt-2 opacity-90 font-semibold">
+                                → Frete grátis
                             </div>
                         </div>
 
                         {/* Estoque */}
-                        <div className="text-xs md:text-sm mb-6 md:mb-8 opacity-90">
-                            🔐 Estoque limitado | Produção 100% natural
+                        <div className="text-xs md:text-sm mb-6 md:mb-8 bg-red-500/20 border-2 border-red-500/40 p-4 rounded-lg text-white">
+                            <p className="font-bold mb-2 text-base">
+                                ⚠️ ATENÇÃO: Devido à produção artesanal com extrato puro da floresta, temos menos kits disponíveis no estoque atual.
+                            </p>
+                            <p className="mb-2">
+                                Quando acabar, só no próximo ciclo — e não prometemos o mesmo desconto.
+                            </p>
+                            <p className="mb-0 font-semibold">
+                                Se você fechar essa página, pode voltar e não encontrar mais.<br/>
+                                O preço vai subir. O estoque vai cair.<br/>
+                                E sua pele vai continuar igual.
+                            </p>
                         </div>
 
                         {/* CTA Button */}
                         <CTAButton href="https://www.belezadafloresta.com.br/produtos/kit-facial-de-mulateiro/">
-                            Escolher meu Kit com 10% OFF
+                            SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
                         </CTAButton>
                         
                         {/* Texto de apoio */}
                         <p className="mt-4 text-xs md:text-sm opacity-95 mb-0">
-                            👆 Escolha ideal para quem quer transformação total em 30 dias.
+                            👆 Escolha ideal para quem quer transformação total em 7 dias.
                         </p>
                     </div>
 
@@ -105,7 +122,8 @@ export default function FinalCTA() {
 
                         {/* Descrição */}
                         <p className="text-sm md:text-base text-textLight mb-6 md:mb-8">
-                            Para quem quer hidratar e clarear manchas no corpo
+                            <strong>Esfoliante Corporal 800g + Creme Clareador de Manchas 250g</strong><br/>
+                            Resultados visíveis em apenas 7 dias
                         </p>
 
                         {/* Lista de produtos */}
@@ -136,15 +154,36 @@ export default function FinalCTA() {
 
                         {/* Preço */}
                         <div className="mb-6 md:mb-8">
+                            <div className="text-sm md:text-base text-textLight mb-1 line-through">
+                                De R$ 310
+                            </div>
                             <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-2">
                                 R$ 280,00
                             </div>
                             <div className="text-sm md:text-base text-textLight">
-                                ou 3x de R$ 93,33 sem juros
+                                ou 3x de R$ 93,33 SEM JUROS
                             </div>
                             <div className="text-xs md:text-sm mt-2 text-accent font-semibold">
-                                → Ganhe 10% OFF na 1ª compra
+                                → 10% OFF na primeira compra
                             </div>
+                            <div className="text-xs md:text-sm mt-2 text-accent font-semibold">
+                                → Frete grátis
+                            </div>
+                        </div>
+
+                        {/* Estoque */}
+                        <div className="text-xs md:text-sm mb-6 md:mb-8 bg-red-500/20 border-2 border-red-500/40 p-4 rounded-lg text-primary">
+                            <p className="font-bold mb-2 text-base">
+                                ⚠️ ATENÇÃO: Devido à produção artesanal com extrato puro da floresta, temos menos kits disponíveis no estoque atual.
+                            </p>
+                            <p className="mb-2">
+                                Quando acabar, só no próximo ciclo — e não prometemos o mesmo desconto.
+                            </p>
+                            <p className="mb-0 font-semibold">
+                                Se você fechar essa página, pode voltar e não encontrar mais.<br/>
+                                O preço vai subir. O estoque vai cair.<br/>
+                                E sua pele vai continuar igual.
+                            </p>
                         </div>
 
                         {/* Texto destacado */}
@@ -154,7 +193,7 @@ export default function FinalCTA() {
 
                         {/* CTA Button */}
                         <CTAButton href="https://www.belezadafloresta.com.br/produtos/kit-corporal-de-mulateiro/">
-                            Escolher meu Kit com 10% OFF
+                            SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
                         </CTAButton>
                         
                         {/* Texto de apoio */}
@@ -194,41 +233,44 @@ export default function FinalCTA() {
                     </p>
                 </div>
 
-                {/* Mini FAQ */}
-                <div className="mt-8 md:mt-12 max-w-3xl mx-auto px-4 md:px-6">
-                    <h3 className="text-primary mb-4 md:mb-6 text-center text-xl md:text-2xl font-bold">
-                        ❓ Ainda com dúvidas?
-                    </h3>
+                    {/* Mini FAQ */}
+                    <div className="mt-8 md:mt-12 max-w-3xl mx-auto px-4 md:px-6">
+                        <h3 className="text-primary mb-4 md:mb-6 text-center text-xl md:text-2xl font-bold">
+                            ❓ Ainda com dúvidas?
+                        </h3>
 
-                    <div className="flex flex-col gap-4 md:gap-6">
-                        <div className="text-left bg-white p-4 md:p-6 rounded-xl shadow-sm">
-                            <p className="m-0 font-bold text-primary text-sm md:text-base">
-                                🔹 O produto é indicado para todos os tipos de pele?
-                            </p>
-                            <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
-                                Sim! A fórmula é 100% natural e equilibrada para peles oleosas, mistas e sensíveis.
-                            </p>
-                        </div>
+                        <div className="flex flex-col gap-4 md:gap-6">
+                            <div className="text-left bg-white p-4 md:p-6 rounded-xl shadow-md border-l-4 border-primary hover:shadow-lg transition-shadow">
+                                <p className="m-0 font-bold text-primary text-base md:text-lg mb-3 flex items-center gap-2">
+                                    <span className="text-2xl">🧴</span>
+                                    <span>O produto é indicado para todos os tipos de pele?</span>
+                                </p>
+                                <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
+                                    Sim! <strong className="text-primary">100% natural</strong>, testado dermatologicamente e seguro até para <strong className="text-primary">peles sensíveis</strong>.
+                                </p>
+                            </div>
 
-                        <div className="text-left bg-white p-4 md:p-6 rounded-xl shadow-sm">
-                            <p className="m-0 font-bold text-primary text-sm md:text-base">
-                                🔹 Preciso usar os 4 produtos todos os dias?
-                            </p>
-                            <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
-                                O ritual completo pode ser adaptado à sua rotina. Você pode usar todos os dias ou alternar conforme sua necessidade.
-                            </p>
-                        </div>
+                            <div className="text-left bg-white p-4 md:p-6 rounded-xl shadow-md border-l-4 border-primary hover:shadow-lg transition-shadow">
+                                <p className="m-0 font-bold text-primary text-base md:text-lg mb-3 flex items-center gap-2">
+                                    <span className="text-2xl">⏰</span>
+                                    <span>Preciso usar os 4 produtos todos os dias?</span>
+                                </p>
+                                <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
+                                    O ritual completo pode ser <strong className="text-primary">adaptado à sua rotina</strong>. Você pode usar todos os dias ou alternar conforme sua necessidade.
+                                </p>
+                            </div>
 
-                        <div className="text-left bg-white p-4 md:p-6 rounded-xl shadow-sm">
-                            <p className="m-0 font-bold text-primary text-sm md:text-base">
-                                🔹 Em quanto tempo recebo meu kit?
-                            </p>
-                            <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
-                                Em até 7 dias úteis, com rastreamento e frete gratuito para todo o Brasil.
-                            </p>
+                            <div className="text-left bg-white p-4 md:p-6 rounded-xl shadow-md border-l-4 border-primary hover:shadow-lg transition-shadow">
+                                <p className="m-0 font-bold text-primary text-base md:text-lg mb-3 flex items-center gap-2">
+                                    <span className="text-2xl">📦</span>
+                                    <span>Em quanto tempo recebo meu kit?</span>
+                                </p>
+                                <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
+                                    Em até <strong className="text-primary">7 dias úteis</strong>, com rastreamento e <strong className="text-primary">frete gratuito</strong> para todo o Brasil.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </Section>
     );

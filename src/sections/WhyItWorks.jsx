@@ -1,5 +1,6 @@
 import React from 'react';
 import Section from '../components/Section';
+import CTAButton from '../components/CTAButton';
 
 export default function WhyItWorks() {
     return (
@@ -41,6 +42,13 @@ export default function WhyItWorks() {
                         Zero parabenos, sulfatos ou petrolatos.
                     </p>
                 </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center mt-2xl">
+                <CTAButton href="/oferta">
+                    COMECE SUA TRANSFORMAÇÃO HOJE COM 10% OFF
+                </CTAButton>
             </div>
         </Section>
     );
