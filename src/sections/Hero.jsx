@@ -1,9 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Section from '../components/Section';
 import CTAButton from '../components/CTAButton';
 
 export default function Hero() {
-    const [isZoomOpen, setIsZoomOpen] = useState(false);
+    const [loadedVideo, setLoadedVideo] = useState(false);
+    
+    const getYouTubeThumbnail = useCallback((videoId, quality = 'hqdefault') => {
+        return `https://img.youtube.com/vi/${videoId}/${quality}.jpg`;
+    }, []);
+    
+    const loadVideo = useCallback(() => {
+        const loadIframe = () => {
+            setLoadedVideo(true);
+        };
+        
+        if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+            requestIdleCallback(loadIframe, { timeout: 100 });
+        } else {
+            setTimeout(loadIframe, 0);
+        }
+    }, []);
+
+    const videoId = 'JBK-OW3E7ps';
 
     return (
         <Section background="gradient-primary" className="fade-in">
@@ -45,50 +63,57 @@ export default function Hero() {
                     👉 Escolha seu Kit e sinta a transformação
                 </CTAButton>
 
-                {/* IMAGEM 1: Hero Product Shot */}
+                {/* VÍDEO: Hero Product Video */}
                 <div className="hero-image-shell">
                     <div className="hero-image-frame text-sm text-white/60 font-semibold text-center">
-                        <img
-                            className="hero-image"
-                            src="/images/1.png"
-                            alt="O Ritual Completo com 4 Produtos Naturais da Floresta"
-                            onClick={() => setIsZoomOpen(true)}
-                            loading="eager"
-                            fetchPriority="high"
-                            onError={(e) => {
-                                e.target.style.display = 'none';
-                                e.target.parentElement.innerHTML = '📦 IMAGEM 1: Kit completo em ambiente luxuoso';
-                            }}
-                        />
-                    </div>
-                    <div className="hero-image-caption">
-                        O Ritual Completo com 4 Produtos Naturais da Floresta
-                    </div>
-                </div>
-
-                {isZoomOpen && (
-                    <div
-                        className="hero-zoom-overlay"
-                        role="dialog"
-                        aria-modal="true"
-                        onClick={() => setIsZoomOpen(false)}
-                    >
-                        <div className="hero-zoom-modal" onClick={(e) => e.stopPropagation()}>
-                            <button
-                                type="button"
-                                className="hero-zoom-close"
-                                aria-label="Fechar zoom"
-                                onClick={() => setIsZoomOpen(false)}
-                            >
-                                ✕
-                            </button>
-                            <img
-                                src="/images/1.png"
-                                alt="O Ritual Completo com 4 Produtos Naturais da Floresta"
-                            />
+                        <div 
+                            className="relative w-full pb-[56.25%] h-0 overflow-hidden cursor-pointer rounded-lg shadow-2xl"
+                            onClick={loadVideo}
+                        >
+                            {loadedVideo ? (
+                                <iframe
+                                    width="100%"
+                                    height="100%"
+                                    src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&enablejsapi=0&autoplay=1&controls=1&playsinline=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
+                                    title="Kit de Mulateiro - Beleza da Floresta"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                                    style={{
+                                        willChange: 'transform',
+                                        transform: 'translateZ(0)'
+                                    }}
+                                ></iframe>
+                            ) : (
+                                <>
+                                    <img
+                                        src={getYouTubeThumbnail(videoId)}
+                                        alt="Kit de Mulateiro - Beleza da Floresta"
+                                        className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
+                                        loading="eager"
+                                        fetchPriority="high"
+                                    />
+                                    <div 
+                                        className="absolute inset-0 bg-black/30 flex items-center justify-center transition-colors duration-base hover:bg-black/50 rounded-lg"
+                                        onMouseEnter={(e) => e.currentTarget.classList.add('bg-black/50')}
+                                        onMouseLeave={(e) => e.currentTarget.classList.remove('bg-black/50')}
+                                    >
+                                        <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" className="text-primary ml-1.5">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </>
+                            )}
                         </div>
                     </div>
-                )}
+                    <div className="hero-image-caption">
+                        O Ritual Completo com o Poder do Mulateiro
+                    </div>
+                </div>
             </div>
         </Section>
     );

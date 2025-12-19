@@ -16,64 +16,127 @@ const SocialProof = () => {
     const videos = useMemo(() => [
         {
             id: 1,
-            youtubeUrl: "https://youtu.be/ICImfJGG75I",
-            youtubeId: "ICImfJGG75I",
-            title: "Depoimento Real - Transformação em 30 dias",
+            youtubeUrl: "https://youtu.be/W19-d8OBPQU",
+            youtubeId: "W19-d8OBPQU",
+            title: "Depoimento Real - Kit de Mulateiro",
             description: "Cliente compartilha resultados impressionantes"
         },
         {
             id: 2,
-            youtubeUrl: "https://youtu.be/gfGHZvk8UwE",
-            youtubeId: "gfGHZvk8UwE",
+            youtubeUrl: "https://youtu.be/DzIezL8RLVg",
+            youtubeId: "DzIezL8RLVg",
             title: "Antes e Depois - Resultados Visíveis",
             description: "Veja a transformação real da pele"
         },
         {
             id: 3,
-            youtubeUrl: "https://youtu.be/NLfp-NjWDA4",
-            youtubeId: "NLfp-NjWDA4",
+            youtubeUrl: "https://youtu.be/KFff_AzZS4w",
+            youtubeId: "KFff_AzZS4w",
             title: "Depoimento - Rotina Completa",
             description: "Como usar o kit no dia a dia"
         },
         {
             id: 4,
-            youtubeUrl: "https://youtu.be/BnanqGr0Chc",
-            youtubeId: "BnanqGr0Chc",
+            youtubeUrl: "https://youtu.be/ONbJrzkpjbQ",
+            youtubeId: "ONbJrzkpjbQ",
             title: "Resultados Incríveis - Testemunho",
             description: "Cliente satisfeita compartilha experiência"
         },
         {
             id: 5,
-            youtubeUrl: "https://youtu.be/UI6uEW7fUYA",
-            youtubeId: "UI6uEW7fUYA",
+            youtubeUrl: "https://youtu.be/Ezp3TzoI7Xo",
+            youtubeId: "Ezp3TzoI7Xo",
             title: "Transformação Real - Depoimento",
             description: "Veja os resultados em primeira pessoa"
         },
         {
             id: 6,
-            youtubeUrl: "https://youtu.be/r2IxmctJQCM",
-            youtubeId: "r2IxmctJQCM",
+            youtubeUrl: "https://youtu.be/S993LICf0uk",
+            youtubeId: "S993LICf0uk",
             title: "Antes e Depois - Pele Radiante",
             description: "Comparação impressionante de resultados"
         },
         {
             id: 7,
-            youtubeUrl: "https://youtu.be/S0m78L9qk98",
-            youtubeId: "S0m78L9qk98",
+            youtubeUrl: "https://youtu.be/-X6WykZ5zag",
+            youtubeId: "-X6WykZ5zag",
             title: "Depoimento - Kit de Mulateiro",
             description: "Experiência completa com o produto"
         },
         {
             id: 8,
-            youtubeUrl: "https://youtu.be/MaZSKd0r6A8",
-            youtubeId: "MaZSKd0r6A8",
+            youtubeUrl: "https://youtu.be/hfaIKXBGPis",
+            youtubeId: "hfaIKXBGPis",
             title: "Resultados em 30 Dias - Testemunho",
             description: "Transformação visível em pouco tempo"
         },
         {
             id: 9,
-            youtubeUrl: "https://youtu.be/bBhK7ERAzpQ",
-            youtubeId: "bBhK7ERAzpQ",
+            youtubeUrl: "https://youtu.be/GNUEeRxOWGI",
+            youtubeId: "GNUEeRxOWGI",
+            title: "Depoimento Real - Cliente Satisfeita",
+            description: "Veja o que nossas clientes estão dizendo"
+        },
+        {
+            id: 10,
+            youtubeUrl: "https://youtu.be/aITTVa1JgMk",
+            youtubeId: "aITTVa1JgMk",
+            title: "Depoimento - Transformação em 30 dias",
+            description: "Cliente compartilha resultados impressionantes"
+        },
+        {
+            id: 11,
+            youtubeUrl: "https://youtu.be/WCg5dY1Ugxw",
+            youtubeId: "WCg5dY1Ugxw",
+            title: "Antes e Depois - Resultados Visíveis",
+            description: "Veja a transformação real da pele"
+        },
+        {
+            id: 12,
+            youtubeUrl: "https://youtu.be/d5wU9w1X2Gw",
+            youtubeId: "d5wU9w1X2Gw",
+            title: "Depoimento - Rotina Completa",
+            description: "Como usar o kit no dia a dia"
+        },
+        {
+            id: 13,
+            youtubeUrl: "https://youtu.be/n8iPqe2OeRA",
+            youtubeId: "n8iPqe2OeRA",
+            title: "Resultados Incríveis - Testemunho",
+            description: "Cliente satisfeita compartilha experiência"
+        },
+        {
+            id: 14,
+            youtubeUrl: "https://youtu.be/Eo1yb7kEsDg",
+            youtubeId: "Eo1yb7kEsDg",
+            title: "Transformação Real - Depoimento",
+            description: "Veja os resultados em primeira pessoa"
+        },
+        {
+            id: 15,
+            youtubeUrl: "https://youtu.be/_Agq2RoXNTQ",
+            youtubeId: "_Agq2RoXNTQ",
+            title: "Antes e Depois - Pele Radiante",
+            description: "Comparação impressionante de resultados"
+        },
+        {
+            id: 16,
+            youtubeUrl: "https://youtu.be/jjv_FopnkFM",
+            youtubeId: "jjv_FopnkFM",
+            title: "Depoimento - Kit de Mulateiro",
+            description: "Experiência completa com o produto"
+        },
+        {
+            id: 17,
+            youtubeUrl: "https://youtu.be/Hs6fDeqX7y4",
+            youtubeId: "Hs6fDeqX7y4",
+            title: "Resultados em 30 Dias - Testemunho",
+            description: "Transformação visível em pouco tempo"
+        },
+        {
+            id: 18,
+            youtubeUrl: "https://youtu.be/Ll8fbzx_ApI",
+            youtubeId: "Ll8fbzx_ApI",
             title: "Depoimento Real - Cliente Satisfeita",
             description: "Veja o que nossas clientes estão dizendo"
         }
