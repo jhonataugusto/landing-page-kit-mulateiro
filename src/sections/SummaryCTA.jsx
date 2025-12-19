@@ -63,6 +63,15 @@ export default function SummaryCTA() {
                     </p>
                 </div>
 
+                <div className="mb-xl p-lg bg-white/10 rounded-lg backdrop-blur-md max-w-2xl mx-auto border-2 border-white/20">
+                    <p className="text-xl md:text-2xl text-white font-bold mb-4 leading-relaxed">
+                        Essa é a sua pele. Essa é a sua história. E esse é o momento de mudar as duas.
+                    </p>
+                    <p className="text-lg md:text-xl text-white/95 mb-0 leading-relaxed">
+                        O Kit Mulateiro já transformou a pele de milhares de mulheres. Agora é a sua vez.
+                    </p>
+                </div>
+
                 <CTAButton href="/oferta">
                     QUERO RESULTADO EM 7 DIAS – GARANTIR MEU KIT AGORA
                 </CTAButton>

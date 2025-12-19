@@ -102,7 +102,7 @@ export default function FinalCTA() {
                         </div>
 
                         {/* CTA Button */}
-                        <CTAButton href="https://www.belezadafloresta.com.br/produtos/kit-facial-de-mulateiro/">
+                        <CTAButton href="https://www.belezadafloresta.com.br/produtos/kit-completo-de-mulateiro/">
                             SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
                         </CTAButton>
                         
