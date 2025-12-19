@@ -15,9 +15,48 @@ export default function FinalCTA() {
                 </h2>
 
                 {/* Subtítulo */}
-                <p className="text-base md:text-lg text-textLight mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-base md:text-lg text-textLight mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
                     Transforme sua pele com o poder do Mulateiro, no seu ritmo e do seu jeito.
                 </p>
+
+                {/* Cupom de Desconto - Destaque */}
+                <div className="mb-8 md:mb-12 max-w-3xl mx-auto">
+                    <div className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 md:p-8 rounded-2xl shadow-2xl border-4 border-green-400 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
+                        <div className="relative z-10">
+                            <div className="flex flex-col items-center gap-4">
+                                <div className="text-4xl md:text-5xl mb-2">🎁</div>
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+                                    💰 GANHE 10% DE DESCONTO NA SUA PRIMEIRA COMPRA
+                                </h3>
+                                <div className="bg-white/20 backdrop-blur-md px-6 py-4 rounded-xl border-2 border-white/30 mb-4">
+                                    <p className="text-sm md:text-base text-white/90 mb-2 font-semibold">
+                                        Use o cupom no checkout:
+                                    </p>
+                                    <div className="flex items-center justify-center gap-3">
+                                        <code className="text-2xl md:text-3xl font-black text-white bg-white/30 px-4 py-2 rounded-lg border-2 border-white/50 tracking-wider">
+                                            PRIMEIRA10
+                                        </code>
+                                        <button
+                                            onClick={() => {
+                                                navigator.clipboard.writeText('PRIMEIRA10');
+                                                alert('Cupom copiado! Cole no checkout.');
+                                            }}
+                                            className="px-4 py-2 bg-white text-green-700 rounded-lg font-bold text-sm hover:bg-white/90 transition-colors"
+                                            aria-label="Copiar cupom"
+                                        >
+                                            📋 Copiar
+                                        </button>
+                                    </div>
+                                </div>
+                                <p className="text-white/95 text-sm md:text-base font-semibold mb-0">
+                                    ✨ Aplique o cupom <strong className="text-white">PRIMEIRA10</strong> na finalização da compra e economize 10%!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {/* Grid de ofertas - mobile first: coluna única, desktop: 2 colunas */}
                 <div className="flex flex-col lg:flex-row gap-6 md:gap-8 mb-6 md:mb-8">
