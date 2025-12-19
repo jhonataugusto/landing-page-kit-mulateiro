@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from '../components/Section';
 import CTAButton from '../components/CTAButton';
+import { trackPurchase, trackInitiateCheckout } from '../utils/pixel';
 
 export default function FinalCTA() {
     return (
@@ -102,7 +103,12 @@ export default function FinalCTA() {
                         </div>
 
                         {/* CTA Button */}
-                        <CTAButton href="https://www.belezadafloresta.com.br/produtos/kit-completo-de-mulateiro/">
+                        <CTAButton 
+                            href="https://www.belezadafloresta.com.br/produtos/kit-completo-de-mulateiro/"
+                            onClick={() => {
+                                trackInitiateCheckout({ value: 441.60, currency: 'BRL' });
+                            }}
+                        >
                             SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
                         </CTAButton>
                         
@@ -192,7 +198,12 @@ export default function FinalCTA() {
                         </p>
 
                         {/* CTA Button */}
-                        <CTAButton href="https://www.belezadafloresta.com.br/produtos/kit-corporal-de-mulateiro/">
+                        <CTAButton 
+                            href="https://www.belezadafloresta.com.br/produtos/kit-corporal-de-mulateiro/"
+                            onClick={() => {
+                                trackInitiateCheckout({ value: 280.00, currency: 'BRL' });
+                            }}
+                        >
                             SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
                         </CTAButton>
                         

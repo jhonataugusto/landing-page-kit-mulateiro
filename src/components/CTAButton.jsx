@@ -1,13 +1,19 @@
 import React, { memo, useCallback } from 'react';
+import { trackCTA } from '../utils/pixel';
 
-const CTAButton = memo(function CTAButton({ children, onClick, href }) {
+const CTAButton = memo(function CTAButton({ children, onClick, href, trackEvent = true }) {
     const Component = href ? 'a' : 'button';
 
     const handleClick = useCallback((e) => {
+        // Rastreia clique no CTA
+        if (trackEvent && typeof window !== 'undefined' && window.fbq) {
+            trackCTA(children?.toString() || 'CTA Button');
+        }
+        
         if (onClick) {
             onClick(e);
         }
-    }, [onClick]);
+    }, [onClick, children, trackEvent]);
 
     return (
         <Component
