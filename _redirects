@@ -1,0 +1,5 @@
+# Netlify redirects para suportar rotas SPA
+# Este arquivo deve ser colocado na pasta public/ ou na raiz do build
+
+/*    /index.html   200
+
