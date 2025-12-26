@@ -57,7 +57,7 @@ export default function SummaryCTA() {
                     </div>
                 </div>
 
-                <CTAButton href="/oferta">
+                <CTAButton href="/oferta" variant="inverted">
                     QUERO RESULTADO EM 7 DIAS – GARANTIR MEU KIT AGORA
                 </CTAButton>
             </div>
