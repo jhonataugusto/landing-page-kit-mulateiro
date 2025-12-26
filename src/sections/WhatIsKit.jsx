@@ -17,7 +17,7 @@ export default function WhatIsKit() {
                         Nós sabemos o quão frustrante é ter que pagar 500 REAIS por cada sessão em uma clínica pra ter um resultado aceitável. Ou até mesmo se arriscar em usar cremes de "marca" que só vão irritar ou acabar com a sua pele.
                     </p>
                     <p className="text-base md:text-lg text-textLight mb-0 leading-relaxed">
-                        E pra deixar tudo mais fácil, nós disponibilizamos TODO esse poder do mulateiro e seus benefícios na forma que você já conhece: CREMES, ESFOLIANTES, MÁSCARAS, SABONETES.
+                        E pensando justamente em resolver todas essas dores, nós simplificamos com todo o carinho, cuidado e atenção e disponibilizamos TODO esse poder do mulateiro e seus benefícios na forma que você já conhece: CREMES, ESFOLIANTES, MÁSCARAS, SABONETES.
                     </p>
                 </div>
 
