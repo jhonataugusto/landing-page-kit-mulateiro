@@ -27,7 +27,7 @@ export default function Hero() {
         <Section background="gradient-primary" className="fade-in">
             <div className="text-center text-white py-xl">
                 <h1 className="text-white mb-md text-[clamp(1.75rem,5vw,2.5rem)] leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
-                    O segredo das mulheres indígenas que deixam QUALQUER PELE firme e macia em 7 dias (e que transformou a vida de mais de 100 mil mulheres)
+                    O segredo das mulheres indígenas que deixam QUALQUER PELE firme e macia em 7 dias (e que transformou a vida de 200 mil mulheres)
                 </h1>
 
                 {/* Social Proof Badge */}
