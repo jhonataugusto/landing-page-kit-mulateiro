@@ -19,45 +19,6 @@ export default function FinalCTA() {
                     Transforme sua pele com o poder do Mulateiro, no seu ritmo e do seu jeito.
                 </p>
 
-                {/* Cupom de Desconto - Destaque */}
-                <div className="mb-8 md:mb-12 max-w-3xl mx-auto">
-                    <div className="bg-gradient-to-r from-green-500 via-green-600 to-green-700 p-6 md:p-8 rounded-2xl shadow-2xl border-4 border-green-400 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
-                        <div className="relative z-10">
-                            <div className="flex flex-col items-center gap-4">
-                                <div className="text-4xl md:text-5xl mb-2">🎁</div>
-                                <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
-                                    💰 GANHE 10% DE DESCONTO NA SUA PRIMEIRA COMPRA
-                                </h3>
-                                <div className="bg-white/20 backdrop-blur-md px-6 py-4 rounded-xl border-2 border-white/30 mb-4">
-                                    <p className="text-sm md:text-base text-white/90 mb-2 font-semibold">
-                                        Use o cupom no checkout:
-                                    </p>
-                                    <div className="flex items-center justify-center gap-3">
-                                        <code className="text-2xl md:text-3xl font-black text-white bg-white/30 px-4 py-2 rounded-lg border-2 border-white/50 tracking-wider">
-                                            PRIMEIRA10
-                                        </code>
-                                        <button
-                                            onClick={() => {
-                                                navigator.clipboard.writeText('PRIMEIRA10');
-                                                alert('Cupom copiado! Cole no checkout.');
-                                            }}
-                                            className="px-4 py-2 bg-white text-green-700 rounded-lg font-bold text-sm hover:bg-white/90 transition-colors"
-                                            aria-label="Copiar cupom"
-                                        >
-                                            📋 Copiar
-                                        </button>
-                                    </div>
-                                </div>
-                                <p className="text-white/95 text-sm md:text-base font-semibold mb-0">
-                                    ✨ Aplique o cupom <strong className="text-white">PRIMEIRA10</strong> na finalização da compra e economize 10%!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Grid de ofertas - mobile first: coluna única, desktop: 2 colunas */}
                 <div className="flex flex-col lg:flex-row gap-6 md:gap-8 mb-6 md:mb-8">
                     {/* Oferta 1 - Kit Facial */}
@@ -75,7 +36,6 @@ export default function FinalCTA() {
 
                         {/* Descrição */}
                         <p className="text-sm md:text-base mb-6 md:mb-8 opacity-95">
-                            <strong>Esfoliante + Máscara + Sabonete + Creme Anti-idade</strong><br/>
                             Resultados visíveis em apenas 7 dias
                         </p>
 
@@ -93,24 +53,15 @@ export default function FinalCTA() {
                             </div>
                         </div>
 
-                        {/* Ideal para */}
-                        <div className="bg-white/15 p-4 md:p-6 rounded-xl mb-6 md:mb-8 backdrop-blur-md">
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4 text-sm md:text-base font-semibold">
-                                <span>🌿</span>
-                                <span>Ideal para você que quer:</span>
-                            </div>
-                            <div className="text-left text-sm md:text-base leading-loose">
-                                → Clarear manchas<br/>
-                                → Rejuvenescer a pele do rosto<br/>
-                                → Reduzir linhas finas<br/>
-                                → Voltar a sentir sua pele viva, firme e radiante
-                            </div>
-                        </div>
-
                         {/* Preço */}
-                        <div className="mb-6 md:mb-8">
+                        <div className="mb-6 md:mb-8 relative">
+                            <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 z-10">
+                                <div className="bg-red-500 text-white text-xs md:text-sm font-bold px-3 py-1 md:px-4 md:py-2 rounded-full shadow-lg transform rotate-12">
+                                    30% OFF
+                                </div>
+                            </div>
                             <div className="text-sm md:text-base opacity-90 mb-1 line-through">
-                                De R$ 490
+                                De R$ 631
                             </div>
                             <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-2">
                                 R$ 441,60
@@ -118,27 +69,6 @@ export default function FinalCTA() {
                             <div className="text-sm md:text-base opacity-90">
                                 ou 3x de R$ 147,20 SEM JUROS
                             </div>
-                            <div className="text-xs md:text-sm mt-2 opacity-90 font-semibold">
-                                → 10% OFF na primeira compra
-                            </div>
-                            <div className="text-xs md:text-sm mt-2 opacity-90 font-semibold">
-                                → Frete grátis
-                            </div>
-                        </div>
-
-                        {/* Estoque */}
-                        <div className="text-xs md:text-sm mb-6 md:mb-8 bg-red-500/20 border-2 border-red-500/40 p-4 rounded-lg text-white">
-                            <p className="font-bold mb-2 text-base">
-                                ⚠️ ATENÇÃO: Devido à produção artesanal com extrato puro da floresta, temos menos kits disponíveis no estoque atual.
-                            </p>
-                            <p className="mb-2">
-                                Quando acabar, só no próximo ciclo — e não prometemos o mesmo desconto.
-                            </p>
-                            <p className="mb-0 font-semibold">
-                                Se você fechar essa página, pode voltar e não encontrar mais.<br/>
-                                O preço vai subir. O estoque vai cair.<br/>
-                                E sua pele vai continuar igual.
-                            </p>
                         </div>
 
                         {/* CTA Button */}
@@ -167,7 +97,6 @@ export default function FinalCTA() {
 
                         {/* Descrição */}
                         <p className="text-sm md:text-base text-textLight mb-6 md:mb-8">
-                            <strong>Esfoliante Corporal 800g + Creme Clareador de Manchas 250g</strong><br/>
                             Resultados visíveis em apenas 7 dias
                         </p>
 
@@ -183,20 +112,6 @@ export default function FinalCTA() {
                             </div>
                         </div>
 
-                        {/* Ideal para */}
-                        <div className="bg-primary/5 p-4 md:p-6 rounded-xl mb-6 md:mb-8">
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4 text-sm md:text-base font-semibold text-primary">
-                                <span>🌿</span>
-                                <span>Ideal para você que quer:</span>
-                            </div>
-                            <div className="text-left text-sm md:text-base leading-loose text-textLight">
-                                → Hidratar profundamente<br/>
-                                → Clarear manchas no corpo (axilas, virilha, braços, costas)<br/>
-                                → Sentir a pele renovada, perfumada e protegida<br/>
-                                → Um ritual corporal 100% natural e prazeroso
-                            </div>
-                        </div>
-
                         {/* Preço */}
                         <div className="mb-6 md:mb-8">
                             <div className="text-sm md:text-base text-textLight mb-1 line-through">
@@ -208,27 +123,6 @@ export default function FinalCTA() {
                             <div className="text-sm md:text-base text-textLight">
                                 ou 3x de R$ 93,33 SEM JUROS
                             </div>
-                            <div className="text-xs md:text-sm mt-2 text-accent font-semibold">
-                                → 10% OFF na primeira compra
-                            </div>
-                            <div className="text-xs md:text-sm mt-2 text-accent font-semibold">
-                                → Frete grátis
-                            </div>
-                        </div>
-
-                        {/* Estoque */}
-                        <div className="text-xs md:text-sm mb-6 md:mb-8 bg-red-500/20 border-2 border-red-500/40 p-4 rounded-lg text-primary">
-                            <p className="font-bold mb-2 text-base">
-                                ⚠️ ATENÇÃO: Devido à produção artesanal com extrato puro da floresta, temos menos kits disponíveis no estoque atual.
-                            </p>
-                            <p className="mb-2">
-                                Quando acabar, só no próximo ciclo — e não prometemos o mesmo desconto.
-                            </p>
-                            <p className="mb-0 font-semibold">
-                                Se você fechar essa página, pode voltar e não encontrar mais.<br/>
-                                O preço vai subir. O estoque vai cair.<br/>
-                                E sua pele vai continuar igual.
-                            </p>
                         </div>
 
                         {/* Texto destacado */}
@@ -316,7 +210,7 @@ export default function FinalCTA() {
                                     <span>Em quanto tempo recebo meu kit?</span>
                                 </p>
                                 <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
-                                    Em até <strong className="text-primary">7 dias úteis</strong>, com rastreamento e <strong className="text-primary">frete gratuito</strong> para todo o Brasil.
+                                    Em até <strong className="text-primary">7 dias úteis</strong>, com rastreamento para todo o Brasil.
                                 </p>
                             </div>
                         </div>

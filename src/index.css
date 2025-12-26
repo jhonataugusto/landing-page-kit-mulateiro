@@ -14,7 +14,58 @@
   }
 
   body {
-    @apply font-sans text-base leading-relaxed text-text bg-white overflow-x-hidden;
+    @apply font-sans text-base leading-relaxed text-text overflow-x-hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* Premium gradient blur background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: 
+      radial-gradient(circle at 15% 25%, rgba(0, 49, 46, 0.15) 0%, transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(68, 100, 92, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(179, 193, 166, 0.10) 0%, transparent 55%),
+      radial-gradient(circle at 70% 30%, rgba(151, 191, 169, 0.08) 0%, transparent 40%),
+      linear-gradient(135deg, #fafbfa 0%, #f5f8f7 30%, #f0f5f4 70%, #eaf2f0 100%);
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
+    pointer-events: none;
+  }
+
+  /* Subtle animated gradient overlay for premium feel */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background: 
+      radial-gradient(circle at 25% 35%, rgba(0, 49, 46, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 75% 65%, rgba(68, 100, 92, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(151, 191, 169, 0.08) 0%, transparent 45%);
+    animation: gradientShift 25s ease-in-out infinite;
+    pointer-events: none;
+    opacity: 0.9;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(2%, 2%) scale(1.05);
+      opacity: 0.8;
+    }
   }
 
   @font-face {

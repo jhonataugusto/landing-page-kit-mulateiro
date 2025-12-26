@@ -6,35 +6,29 @@ import CTAButton from '../components/CTAButton';
 export default function TargetAudience() {
     return (
         <Section background="white">
-            <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-md">Este Kit Foi Feito Para Você Se...</h2>
-            <p className="text-center max-w-2xl mx-auto mb-xl text-lg">
-                Você se identifica com alguma dessas situações?
+            <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-md">"Esse kit foi feito pra mim?"</h2>
+            <p className="text-center max-w-2xl mx-auto mb-xl text-lg text-textLight">
+                Você deve estar se perguntando isso nesse exato momento, então vamos fazer um checklist...
             </p>
 
             <div className="max-w-3xl mx-auto grid gap-md">
                 <BenefitItem>
-                    Você já gastou mais de R$ 500 em cremes e tratamentos sem ver resultados reais
+                    Já gastou em tratamentos caríssimos e ficou frustrada sem ver resultados REAIS?
                 </BenefitItem>
                 <BenefitItem>
-                    Você está cansada de produtos cheios de químicos agressivos que irritam sua pele
+                    Já se cansou de tratamentos super agressivos que ACABAM com sua PELE?
                 </BenefitItem>
                 <BenefitItem>
-                    Você quer resultados em 7 dias, não em 6 meses de espera
+                    Quer ver resultados em menos de 7 dias, não em 7 meses?
                 </BenefitItem>
                 <BenefitItem>
-                    Você tem manchas, linhas finas ou pele sem brilho que te incomodam
+                    Se sente insegura ou infeliz com o melasma ou manchas no rosto/corpo?
                 </BenefitItem>
                 <BenefitItem>
-                    Você busca uma solução natural, eficaz e que realmente funcione
+                    Quer algo 100% natural para sua pele?
                 </BenefitItem>
                 <BenefitItem>
-                    Você quer um ritual completo e prático, sem complicação
-                </BenefitItem>
-                <BenefitItem>
-                    Você valoriza ingredientes da natureza e produtos sustentáveis
-                </BenefitItem>
-                <BenefitItem>
-                    Você está pronta para investir em si mesma e ver uma transformação real
+                    Quer restaurar sua confiança e sua autoestima e está disposta a ver uma transformação INCRIVEL?
                 </BenefitItem>
             </div>
 

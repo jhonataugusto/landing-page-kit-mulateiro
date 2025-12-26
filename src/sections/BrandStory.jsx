@@ -27,34 +27,32 @@ const BrandStory = memo(function BrandStory() {
     return (
         <Section background="gradient-secondary">
             <div className="max-w-3xl mx-auto text-center">
-                <div className="inline-flex items-center gap-xs px-md py-xs bg-primary text-white rounded-full text-xs font-semibold uppercase tracking-wide mb-md">
-                    <span>🌿</span>
-                    Nossa História
-                </div>
-
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-md">
-                    Mais de 20 Anos de História, Uma Nova Descoberta
+                    🌿 Mais de 20 anos de história com o Mulateiro.
                 </h2>
 
                 <div className="text-base md:text-lg text-textLight leading-relaxed mb-xl text-left max-w-2xl mx-auto p-lg bg-white/50 rounded-lg">
                     <p className="mb-md">
-                        Há mais de <strong className="text-primary">20 anos</strong>, a <strong className="text-primary">Beleza da Floresta</strong> nasceu de uma paixão profunda pela natureza e pelo cuidado genuíno com a pele. Desde o início, nossa missão foi combinar tradição, ciência e ingredientes naturais para criar produtos que realmente transformam.
+                        Mais de 20 anos de história com o Mulateiro.
                     </p>
                     
                     <p className="mb-md">
-                        Ao longo dessas duas décadas, desenvolvemos dezenas de produtos com extratos da floresta, sempre buscando o melhor que a natureza pode oferecer. Mas foi quando descobrimos <strong className="text-primary">o Mulateiro</strong> — um ingrediente precioso da floresta amazônica, usado há gerações pelas mulheres da floresta — que encontramos algo verdadeiramente especial.
+                        A Beleza da Floresta nasceu com o intuito de oferecer o que tem de melhor da região Amazônica diretamente para o ramo de cosméticos do Brasil.
                     </p>
                     
                     <p className="mb-md">
-                        O Mulateiro se tornou o coração do nosso <strong className="text-primary">Kit Completo</strong>, combinando toda a experiência de 20 anos em skincare natural com o poder transformador deste ingrediente único. Não é apenas mais um produto — é o resultado de duas décadas de pesquisa, dedicação e amor pela beleza que vem da floresta.
+                        Ao longo desses 20 anos, nós desenvolvemos centenas de produtos com extratos da floresta (sem desmatamento), sempre extraindo o melhor que ela pode oferecer.
                     </p>
                     
                     <p className="mb-md">
-                        Hoje, mais de <strong className="text-primary">193 mil mulheres</strong> fazem parte dessa jornada. Mulheres que descobriram que cuidar da pele não precisa ser complicado — só precisa ser natural, eficaz e verdadeiro. Mulheres que confiam na tradição de 20 anos da Beleza da Floresta.
+                        Mas foi quando descobrimos o Mulateiro que realmente encontramos algo especial.
                     </p>
                     
-                    <p className="mt-lg font-semibold text-primary text-center italic">
-                        E você? Está pronta para fazer parte dessa transformação?
+                    <p className="mb-md">
+                        Foi tão especial que se transformou no PRINCIPAL tratamento que oferecemos até hoje, com a aprovação de centenas de milhares de mulheres do Brasil.
+                    </p>
+                    <p className="mb-0 text-sm text-textLight italic">
+                        Aqui abaixo mostramos uma reportagem sobre o mulateiro, onde fizemos uma feira de exposição dos kits.
                     </p>
                 </div>
 
@@ -153,56 +151,10 @@ const BrandStory = memo(function BrandStory() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-lg mt-2xl">
-                    <div className="bg-white rounded-xl p-xl text-left shadow-md hover:shadow-lg transition-shadow duration-base">
-                        <div className="text-4xl mb-md">🌱</div>
-                        <h3 className="text-lg font-semibold text-primary mb-sm">
-                            Ingredientes da Floresta
-                        </h3>
-                        <p className="text-sm text-textLight leading-relaxed m-0">
-                            Cada fórmula é desenvolvida com extratos naturais cuidadosamente selecionados,
-                            sem parabenos, sulfatos ou químicos agressivos. Apenas o melhor que a natureza pode oferecer.
-                        </p>
-                    </div>
-
-                    <div className="bg-white rounded-xl p-xl text-left shadow-md hover:shadow-lg transition-shadow duration-base">
-                        <div className="text-4xl mb-md">🔬</div>
-                        <h3 className="text-lg font-semibold text-primary mb-sm">
-                            Ciência e Tradição
-                        </h3>
-                        <p className="text-sm text-textLight leading-relaxed m-0">
-                            Unimos conhecimentos ancestrais sobre plantas medicinais com pesquisas científicas modernas,
-                            garantindo produtos eficazes, seguros e testados dermatologicamente.
-                        </p>
-                    </div>
-
-                    <div className="bg-white rounded-xl p-xl text-left shadow-md hover:shadow-lg transition-shadow duration-base">
-                        <div className="text-4xl mb-md">💚</div>
-                        <h3 className="text-lg font-semibold text-primary mb-sm">
-                            Compromisso com Você
-                        </h3>
-                        <p className="text-sm text-textLight leading-relaxed m-0">
-                            Nossa comunidade de mais de 193 mil seguidores no Instagram é prova do nosso compromisso
-                            com transparência, educação e resultados reais. Cada cliente é parte da nossa história.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="mt-2xl p-xl bg-primary/5 rounded-lg border-l-4 border-primary mb-xl">
-                    <p className="text-base md:text-lg italic text-primary font-medium leading-relaxed m-0">
-                        "Cada produto reflete nossa história de amor pela beleza que vem da floresta.
-                        Acreditamos que cuidar da pele é um ato de amor próprio, e estamos aqui para
-                        acompanhar você nessa jornada de transformação."
-                    </p>
-                    <p className="mt-md text-sm text-textLight font-semibold">
-                        — Equipe Beleza da Floresta
-                    </p>
-                </div>
-
                 {/* CTA */}
                 <div className="text-center">
                     <CTAButton href="/oferta">
-                        COMECE SUA TRANSFORMAÇÃO HOJE COM 10% OFF
+                        COMECE SUA TRANSFORMAÇÃO HOJE
                     </CTAButton>
                 </div>
             </div>

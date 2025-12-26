@@ -40,18 +40,12 @@ const MulateiroOrigin = memo(function MulateiroOrigin() {
     return (
         <Section background="white">
             <div className="max-w-4xl mx-auto text-center">
-                <div className="inline-flex items-center gap-xs px-md py-xs bg-primary text-white rounded-full text-xs font-semibold uppercase tracking-wide mb-md">
-                    <span>🌿</span>
-                    Nossas Raízes
-                </div>
-
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-md">
-                    Conheça o Mulateiro: De Onde Vem o Poder da Floresta
+                    Tudo o que você precisa saber sobre o kit de mulateiro
                 </h2>
 
                 <p className="text-base md:text-lg text-textLight leading-relaxed mb-xl max-w-2xl mx-auto">
-                    Conheça o ingrediente mais precioso da floresta amazônica: o <strong className="text-primary">Mulateiro</strong>. 
-                    Descubra de onde vem esse poder natural que está transformando a rotina de beleza de milhares de mulheres.
+                    Nestes vídeos estão a maioria das respostas para suas dúvidas, como usar, como funciona, é apenas uma versão mais detalhada sobre o Mulateiro.
                 </p>
 
                 {/* Vídeo 1 - Árvore do Mulateiro */}
@@ -144,15 +138,6 @@ const MulateiroOrigin = memo(function MulateiroOrigin() {
                             </>
                         )}
                     </div>
-                </div>
-
-                <div className="mt-xl p-lg bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg border-l-4 border-primary text-left max-w-2xl mx-auto mb-xl">
-                    <p className="text-base md:text-lg text-textLight leading-relaxed m-0">
-                        Descubra a origem do ingrediente mais precioso da floresta amazônica. 
-                        Você vai conhecer de perto a <strong className="text-primary">Árvore do Mulateiro</strong>, 
-                        entender como ela é cultivada e colhida, e descobrir por que esse ingrediente natural 
-                        é tão poderoso para transformar sua pele.
-                    </p>
                 </div>
 
                 {/* CTA */}

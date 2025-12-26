@@ -6,8 +6,8 @@ export default function WhyItWorks() {
     return (
         <Section background="white">
             <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-md">Por Que o Mulateiro Funciona?</h2>
-            <p className="text-center max-w-2xl mx-auto mb-xl text-lg">
-                Direto da Amazônia, o extrato de mulateiro é um dos segredos mais bem guardados da medicina natural brasileira.
+            <p className="text-center max-w-2xl mx-auto mb-xl text-lg text-textLight">
+                O Mulateiro é um dos MELHORES produtos pra clarear manchas e revitalizar a pele. Ele também é um ótimo anti-envelhecimento natural, por que ele combate diretamente as linhas de expressão da sua face, além de ser um ótimo estimulante do colágeno.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md mt-xl">
@@ -47,7 +47,7 @@ export default function WhyItWorks() {
             {/* CTA */}
             <div className="text-center mt-2xl">
                 <CTAButton href="/oferta">
-                    COMECE SUA TRANSFORMAÇÃO HOJE COM 10% OFF
+                    COMECE SUA TRANSFORMAÇÃO HOJE
                 </CTAButton>
             </div>
         </Section>

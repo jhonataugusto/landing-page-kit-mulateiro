@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Section({ children, className = '', background = 'white', id }) {
     const bgClasses = {
-        'white': 'bg-white',
-        'light': 'bg-light',
+        'white': 'bg-white/90 backdrop-blur-md',
+        'light': 'bg-light/85 backdrop-blur-md',
         'gradient-primary': 'bg-gradient-to-br from-primary to-accent',
         'gradient-secondary': 'bg-gradient-to-br from-secondary to-highlight',
     };

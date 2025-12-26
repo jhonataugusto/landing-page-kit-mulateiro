@@ -27,12 +27,8 @@ export default function Hero() {
         <Section background="gradient-primary" className="fade-in">
             <div className="text-center text-white py-xl">
                 <h1 className="text-white mb-md text-[clamp(1.75rem,5vw,2.5rem)] leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
-                    Pele mais clara, firme e jovem em 7 dias – com o segredo da floresta amazônica que já mudou a vida de 193 mil mulheres
+                    O segredo das mulheres indígenas que deixam QUALQUER PELE firme e macia em 7 dias (e que transformou a vida de mais de 100 mil mulheres)
                 </h1>
-
-                <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-lighter mb-lg max-w-3xl mx-auto leading-relaxed font-bold bg-red-500/20 border-2 border-red-500/40 px-lg py-md rounded-lg">
-                    ⚠️ Estoque limitado. Garanta seu ritual antes que acabe o lote atual.
-                </p>
 
                 {/* Social Proof Badge */}
                 <div className="inline-flex items-center gap-xs bg-white/95 text-primary px-lg py-sm rounded-full mb-lg font-semibold text-sm shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
@@ -41,41 +37,39 @@ export default function Hero() {
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
-                    <span>✨ Mais de 193 mil mulheres já confiam na Beleza da Floresta</span>
+                    <span>✨ Mais de 200 mil mulheres já confiam na Beleza da Floresta</span>
                 </div>
 
                 <div className="max-w-3xl mx-auto mb-lg p-lg bg-white/10 rounded-lg backdrop-blur-md text-left">
                     <p className="text-base md:text-lg text-white/95 mb-md leading-relaxed">
-                        Você se olha no espelho e vê as manchas que não saem. As linhas finas crescendo. A pele opaca, morta.
+                        Todos os dias você levanta, se olha no espelho, olha pra sua pele e se sente infeliz, porque sabe que será mais um dia onde você não vai estar "bonita" como antes.
                     </p>
                     <p className="text-base md:text-lg text-white/95 mb-md leading-relaxed">
-                        E aquela sensação nojenta de ter gastado uma fortuna pra absolutamente nada.
+                        Você já tentou usar de tudo: várias receitas incomuns (onde grande parte é industrializada) que aparecem por aí na internet, e NUNCA funcionou. Muito pelo contrário: a situação da sua pele só piorou.
                     </p>
                     <p className="text-base md:text-lg text-white/95 mb-md leading-relaxed">
-                        Já testou de tudo: creme francês, ácido do TikTok, tratamento caro… e tudo o que ganhou foi frustração e mais insegurança.
+                        Nós sabemos, isso é frustrante. Mas antes de te mostrar uma coisa, queremos deixar algo bem claro:
+                    </p>
+                    <p className="text-base md:text-lg text-white/95 mb-md leading-relaxed font-semibold text-xl">
+                        O problema NÃO É VOCÊ.
+                    </p>
+                    <p className="text-base md:text-lg text-white/95 mb-md leading-relaxed">
+                        Grande parte desses produtos que aparecem pra você nas redes sociais são industrializados. Eles só servem para "disfarçar" ou "esconder" problemas de pele. Ou até, em casos piores, muitos deles nem mesmo são confiáveis e podem DESTRUIR ou PIORAR a situação.
+                    </p>
+                    <p className="text-base md:text-lg text-white/95 mb-md leading-relaxed">
+                        Sabendo disso, queremos te apresentar outra alternativa a esses produtos industrializados ou até mesmo da "moda do momento": uma alternativa que há décadas as mulheres indígenas da região Norte do Brasil usam pra manter suas peles firmes, macias e jovens. E o melhor: TOTALMENTE ARTESANAL, com ingredientes direto da floresta amazônica, onde o real segredo da juventude está escondido.
                     </p>
                     <p className="text-base md:text-lg text-white/95 mb-0 leading-relaxed font-semibold">
-                        Mas o problema não é você.
-                    </p>
-                    <p className="text-base md:text-lg text-white/95 mb-0 leading-relaxed">
-                        O problema são esses produtos cheios de promessas e químicos agressivos que só mascaram — e não tratam.
+                        E você achou ele nessa página. Nós apresentamos o MULATEIRO.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-md items-center mb-xl">
-                    <div className="bg-white/10 px-md py-sm rounded-md backdrop-blur-md">
-                        🌿 100% Natural - Direto da Floresta Amazônica
-                    </div>
-                    <div className="bg-white/10 px-md py-sm rounded-md backdrop-blur-md">
-                        ⚡ Resultados visíveis em apenas 7 dias
-                    </div>
-                    <div className="bg-white/10 px-md py-sm rounded-md backdrop-blur-md">
-                        💚 10% OFF na primeira compra + Frete Grátis
-                    </div>
-                </div>
+                <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-lighter mb-lg max-w-3xl mx-auto leading-relaxed font-bold bg-red-500/20 border-2 border-red-500/40 px-lg py-md rounded-lg">
+                    ⚠️ ESTOQUE LIMITADO!! Descubra esse segredo antes que o estoque acabe, pode ser sua última chance.
+                </p>
 
-                <CTAButton href="/oferta">
-                    COMECE SUA TRANSFORMAÇÃO HOJE COM 10% OFF
+                <CTAButton href="/oferta" variant="inverted">
+                    ADQUIRA SEU KIT AGORA
                 </CTAButton>
 
                 {/* VÍDEO: Hero Product Video */}

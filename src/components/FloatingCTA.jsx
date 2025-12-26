@@ -3,7 +3,7 @@ import React from 'react';
 export default function FloatingCTA({
     href = '/oferta',
     preText = '🔥 Oferta especial',
-    ctaText = 'Garanta seu Kit com 10% OFF',
+    ctaText = 'Adquira seu Kit Agora',
 }) {
     return (
         <div className="fixed left-0 right-0 bottom-0 px-md pb-[calc(1.5rem+env(safe-area-inset-bottom))] z-[999] pointer-events-none">
