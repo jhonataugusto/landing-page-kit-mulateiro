@@ -77,6 +77,7 @@ export default function FinalCTA() {
                             onClick={() => {
                                 trackInitiateCheckout({ value: 441.60, currency: 'BRL' });
                             }}
+                            variant="inverted"
                         >
                             SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
                         </CTAButton>
