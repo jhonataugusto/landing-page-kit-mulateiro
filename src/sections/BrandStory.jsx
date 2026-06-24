@@ -49,7 +49,7 @@ const BrandStory = memo(function BrandStory() {
                     </p>
                     
                     <p className="mb-md">
-                        Foi tão especial que se transformou no PRINCIPAL tratamento que oferecemos até hoje, com a aprovação de centenas de milhares de mulheres do Brasil.
+                        Foi tão especial que se transformou no PRINCIPAL tratamento que oferecemos até hoje, com a aprovação de mais de 500 mil clientes satisfeitas no Brasil.
                     </p>
                     <p className="mb-0 text-sm text-textLight italic">
                         Aqui abaixo mostramos uma reportagem sobre o mulateiro, onde fizemos uma feira de exposição dos kits.

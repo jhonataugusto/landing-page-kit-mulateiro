@@ -1,36 +1,33 @@
 import React from 'react';
 import Section from '../components/Section';
+import SectionHeader from '../components/SectionHeader';
+import { IconCheck } from '../components/icons';
+
+const badges = [
+    'Fórmulas veganas e naturais',
+    'Testadas dermatologicamente',
+    'Sem crueldade animal',
+    'Sem corantes, parabenos ou sulfatos',
+    'Texturas leves e absorção rápida',
+];
 
 export default function TrustBadges() {
     return (
-        <Section background="light">
-            <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-md">💚 Um Ritual Que Respeita Sua Pele e o Planeta</h2>
+        <Section background="white">
+            <SectionHeader
+                eyebrow="Compromisso com você"
+                title="Um ritual que respeita sua pele e o planeta"
+            />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-md mt-xl max-w-5xl mx-auto">
-                <div className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-base">
-                    <div className="text-5xl mb-sm">✔</div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">Fórmulas veganas e naturais</h3>
-                </div>
-
-                <div className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-base">
-                    <div className="text-5xl mb-sm">✔</div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">Testadas dermatologicamente</h3>
-                </div>
-
-                <div className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-base">
-                    <div className="text-5xl mb-sm">✔</div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">Sem crueldade animal</h3>
-                </div>
-
-                <div className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-base">
-                    <div className="text-5xl mb-sm">✔</div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">Sem corantes, sem parabenos, sem sulfatos</h3>
-                </div>
-
-                <div className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-base">
-                    <div className="text-5xl mb-sm">✔</div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">Texturas leves, absorção rápida e aromas suaves</h3>
-                </div>
+            <div className="trust-badges-grid">
+                {badges.map((label) => (
+                    <div key={label} className="trust-badge-card">
+                        <span className="trust-badge-card__icon" aria-hidden="true">
+                            <IconCheck className="w-5 h-5" />
+                        </span>
+                        <h3 className="trust-badge-card__label">{label}</h3>
+                    </div>
+                ))}
             </div>
         </Section>
     );

@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import PromoBar from '../components/PromoBar';
+import TrustRibbon from '../components/TrustRibbon';
 import FinalCTA from '../sections/FinalCTA';
 import FloatingCTA from '../components/FloatingCTA';
 import { trackViewContent } from '../utils/pixel';
 
 export default function Oferta() {
-    // Dispara evento ViewContent quando a página de oferta carrega
     useEffect(() => {
         trackViewContent({
             contentName: 'Kit de Mulateiro - Página de Oferta',
@@ -14,12 +15,16 @@ export default function Oferta() {
 
     return (
         <div className="App">
+            <PromoBar />
             <main>
-                {/* Página de ofertas - apenas a seção FinalCTA */}
                 <FinalCTA />
             </main>
-            <FloatingCTA href="/oferta" />
+            <TrustRibbon variant="dark" />
+            <FloatingCTA
+                href="#comprar"
+                preText="Oferta termina hoje"
+                ctaText="Garantir meu Kit Agora"
+            />
         </div>
     );
 }
-

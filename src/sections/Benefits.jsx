@@ -1,57 +1,137 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Section from '../components/Section';
+import SectionHeader from '../components/SectionHeader';
 import BenefitItem from '../components/BenefitItem';
 import CTAButton from '../components/CTAButton';
 
-export default function Benefits() {
-    return (
-        <Section background="light">
-            <h2 className="text-center text-2xl md:text-3xl font-bold text-primary mb-md">✨ Resultados em 7 Dias</h2>
-            <p className="text-center max-w-2xl mx-auto mb-xl text-lg text-textLight">
-                Direto da floresta amazônica, o Mulateiro é usado há gerações pelas mulheres da floresta para clarear manchas, rejuvenescer a pele e restaurar a firmeza natural — sem agredir, sem prometer ilusão.
-            </p>
+const proofImages = [
+    {
+        src: '/images/prova1.jpg',
+        alt: 'Prova real de resultado do Kit de Mulateiro 1',
+    },
+    {
+        src: '/images/prova2.jpg',
+        alt: 'Prova real de resultado do Kit de Mulateiro 2',
+    },
+    {
+        src: '/images/prova3.jpg',
+        alt: 'Prova real de resultado do Kit de Mulateiro 3',
+    },
+    {
+        src: '/images/prova4.jpg',
+        alt: 'Prova real de resultado do Kit de Mulateiro 4',
+    },
+];
 
-            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-md">
-                <BenefitItem>
-                    ✅ Pele mais macia e hidratada sem oleosidade
-                </BenefitItem>
-                <BenefitItem>
-                    ✅ Textura uniforme e toque aveludado
-                </BenefitItem>
-                <BenefitItem>
-                    ✅ Início do clareamento de manchas
-                </BenefitItem>
-                <BenefitItem>
-                    ✅ Brilho natural e viço visível
-                </BenefitItem>
-                <BenefitItem>
-                    ✅ Redução do aspecto cansado e linhas finas
-                </BenefitItem>
-                <BenefitItem>
-                    ✅ Sensação de frescor e limpeza real
-                </BenefitItem>
+const benefits = [
+    'Pele mais macia e hidratada sem oleosidade',
+    'Textura uniforme e toque aveludado',
+    'Início do clareamento de manchas',
+    'Brilho natural e viço visível',
+    'Redução do aspecto cansado e linhas finas',
+    'Sensação de frescor e limpeza real',
+];
+
+export default function Benefits() {
+    const [currentProof, setCurrentProof] = useState(0);
+    const activeImage = proofImages[currentProof];
+
+    const goToPreviousProof = () => {
+        setCurrentProof((current) =>
+            current === 0 ? proofImages.length - 1 : current - 1
+        );
+    };
+
+    const goToNextProof = () => {
+        setCurrentProof((current) =>
+            current === proofImages.length - 1 ? 0 : current + 1
+        );
+    };
+
+    return (
+        <Section background="cream" className="benefits-section">
+            <SectionHeader
+                eyebrow="Resultados em 7 dias"
+                title="O que você pode sentir na sua pele"
+                subtitle="Direto da floresta amazônica, o Mulateiro é usado há gerações para clarear manchas, rejuvenescer a pele e restaurar a firmeza natural."
+                align="center"
+            />
+
+            <div className="benefits-grid">
+                {benefits.map((benefit) => (
+                    <BenefitItem key={benefit}>{benefit}</BenefitItem>
+                ))}
             </div>
 
-            {/* IMAGEM 2: Before/After Transformation */}
-            <div className="mt-2xl max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg bg-white mb-xl">
-                <div className="w-full aspect-[21/9] bg-gradient-to-br from-light to-lighter flex items-center justify-center text-sm text-textLight font-semibold text-center p-md">
+            <div className="proof-carousel" aria-label="Carrossel de provas reais">
+                <button
+                    type="button"
+                    className="proof-carousel__button proof-carousel__button--prev"
+                    onClick={goToPreviousProof}
+                    aria-label="Ver prova anterior"
+                >
+                    <span aria-hidden="true">‹</span>
+                </button>
+
+                <figure className="proof-carousel__card">
                     <img
-                        src="/images/2.png"
-                        alt="Antes e Depois - Transformação da pele em 7 dias"
+                        src={activeImage.src}
+                        alt={activeImage.alt}
                         loading="lazy"
-                        className="w-full h-full object-cover"
+                        className="proof-carousel__img"
                         onError={(e) => {
-                            e.target.style.display = 'none';
-                            e.target.parentElement.innerHTML = '📸 IMAGEM 2: Antes e Depois - Transformação em 7 dias';
+                            e.currentTarget.style.display = 'none';
                         }}
                     />
-                </div>
+                </figure>
+
+                <button
+                    type="button"
+                    className="proof-carousel__button proof-carousel__button--next"
+                    onClick={goToNextProof}
+                    aria-label="Ver próxima prova"
+                >
+                    <span aria-hidden="true">›</span>
+                </button>
             </div>
 
-            {/* CTA */}
-            <div className="text-center">
+            <div className="proof-carousel__dots" aria-label="Selecionar prova">
+                {proofImages.map((image, index) => (
+                    <button
+                        key={image.src}
+                        type="button"
+                        className={`proof-carousel__dot ${currentProof === index ? 'proof-carousel__dot--active' : ''}`}
+                        onClick={() => setCurrentProof(index)}
+                        aria-label={`Ver prova ${index + 1}`}
+                    />
+                ))}
+            </div>
+
+            <div className="proof-carousel__thumbs" aria-hidden="true">
+                {proofImages.map((image, index) => (
+                    <button
+                        key={image.src}
+                        type="button"
+                        className={`proof-carousel__thumb ${currentProof === index ? 'proof-carousel__thumb--active' : ''}`}
+                        onClick={() => setCurrentProof(index)}
+                        tabIndex={-1}
+                    >
+                        <img
+                            src={image.src}
+                            alt={image.alt}
+                            loading="lazy"
+                            className="proof-carousel__thumb-img"
+                            onError={(e) => {
+                                e.currentTarget.closest('.proof-carousel__thumb').style.display = 'none';
+                            }}
+                        />
+                    </button>
+                ))}
+            </div>
+
+            <div className="section-cta">
                 <CTAButton href="/oferta">
-                    SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
+                    Quero me ver no espelho com orgulho
                 </CTAButton>
             </div>
         </Section>

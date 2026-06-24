@@ -1,19 +1,21 @@
 import React from 'react';
 
-export default function Section({ children, className = '', background = 'white', id }) {
+export default function Section({ children, className = '', background = 'white', id, narrow = false }) {
     const bgClasses = {
-        'white': 'bg-white/90 backdrop-blur-md',
-        'light': 'bg-light/85 backdrop-blur-md',
-        'gradient-primary': 'bg-gradient-to-br from-primary to-accent',
-        'gradient-secondary': 'bg-gradient-to-br from-secondary to-highlight',
+        white: 'section--white',
+        cream: 'section--cream',
+        light: 'section--light',
+        sand: 'section--sand',
+        'gradient-primary': 'section--gradient',
+        'gradient-secondary': 'section--gradient-secondary',
     };
 
     return (
         <section
             id={id}
-            className={`py-xl ${bgClasses[background] || 'bg-white'} ${className}`}
+            className={`section ${bgClasses[background] || 'section--white'} ${className}`}
         >
-            <div className="container mx-auto px-4 md:px-6">
+            <div className={`section__inner ${narrow ? 'section__inner--narrow' : ''}`}>
                 {children}
             </div>
         </section>

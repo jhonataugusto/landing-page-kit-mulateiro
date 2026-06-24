@@ -1,222 +1,222 @@
 import React from 'react';
 import Section from '../components/Section';
 import CTAButton from '../components/CTAButton';
-import { trackPurchase, trackInitiateCheckout } from '../utils/pixel';
+import StarRating from '../components/StarRating';
+import CountdownTimer from '../components/CountdownTimer';
+import StockUrgency from '../components/StockUrgency';
+import GuaranteeBadges from '../components/GuaranteeBadges';
+import TrustRibbon from '../components/TrustRibbon';
+import TestimonialCard from '../components/TestimonialCard';
+import { trackInitiateCheckout } from '../utils/pixel';
+import { featuredTestimonials, testimonials } from '../data/testimonials';
+import { SATISFIED_CUSTOMERS_LABEL } from '../data/socialProof';
+
+const faqItems = [
+    {
+        q: 'O Kit de Mulateiro funciona mesmo?',
+        a: 'Sim! Mais de 500 mil clientes satisfeitas já comprovaram resultados visíveis desde o primeiro uso. Veja os depoimentos em vídeo e as avaliações nesta página.',
+    },
+    {
+        q: 'É seguro para todos os tipos de pele?',
+        a: 'Sim. Fórmulas 100% naturais, testadas dermatologicamente e seguras até para peles sensíveis.',
+    },
+    {
+        q: 'Em quanto tempo vejo resultados?',
+        a: 'Muitas clientes notam diferença já na primeira aplicação. Em 7 dias de uso consistente, os resultados ficam ainda mais visíveis.',
+    },
+    {
+        q: 'Posso usar no rosto e no corpo?',
+        a: 'Sim! Temos o Kit Facial para rosto e o Kit Corporal para áreas como virilhas, joelhos, cotovelos e melasma.',
+    },
+    {
+        q: 'Qual a forma de pagamento?',
+        a: 'Cartão de crédito (até 12x sem juros), Pix com desconto extra, e boleto bancário.',
+    },
+    {
+        q: 'Qual o prazo de entrega?',
+        a: 'De 3 a 7 dias úteis para todo o Brasil, com código de rastreamento.',
+    },
+    {
+        q: 'Posso trocar ou devolver?',
+        a: 'Sim. Garantia de 30 dias — se não ficar satisfeita, devolvemos seu dinheiro.',
+    },
+];
+
+const benefits = [
+    'Clareamento visível desde o 1º uso',
+    'Ação calmante para a pele',
+    'Ajuda na aparência de manchas e melasma',
+    'Auxilia na melhora visual de olheiras e acne',
+    'Pele com aspecto mais iluminado e uniforme',
+    'Sensação de pele cuidada, limpa e valorizada',
+];
 
 export default function FinalCTA() {
     return (
-        <Section background="white" id="comprar">
-            {/* Container principal - mobile first com flexbox */}
-            <div className="w-full max-w-[1200px] mx-auto px-4 md:px-6 text-center">
-                {/* Título */}
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-4 md:mb-6 flex flex-wrap items-center justify-center gap-2 md:gap-4">
-                    <span>💎</span>
-                    <span>ESCOLHA SEU KIT E SINTA A TRANSFORMAÇÃO</span>
-                </h2>
-
-                {/* Subtítulo */}
-                <p className="text-base md:text-lg text-textLight mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
-                    Transforme sua pele com o poder do Mulateiro, no seu ritmo e do seu jeito.
-                </p>
-
-                {/* Grid de ofertas - mobile first: coluna única, desktop: 2 colunas */}
-                <div className="flex flex-col lg:flex-row gap-6 md:gap-8 mb-6 md:mb-8">
-                    {/* Oferta 1 - Kit Facial */}
-                    <div className="flex-1 bg-gradient-to-br from-primary to-accent rounded-2xl p-6 md:p-8 lg:p-12 text-white shadow-2xl border-4 border-primary relative overflow-hidden">
-                        {/* Badge "Mais Popular" */}
-                        <div className="absolute top-4 right-4 bg-white/20 px-3 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-semibold backdrop-blur-sm">
-                            ⭐ MAIS POPULAR
-                        </div>
-
-                        {/* Título da oferta */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-4 mb-4 md:mb-6 text-base md:text-lg font-semibold">
-                            <span>💆‍♀️</span>
-                            <span className="text-center">KIT FACIAL DE MULATEIRO</span>
-                        </div>
-
-                        {/* Descrição */}
-                        <p className="text-sm md:text-base mb-6 md:mb-8 opacity-95">
-                            Resultados visíveis em apenas 7 dias
+        <>
+            <Section background="gradient-primary" className="oferta-hero">
+                <div className="oferta-hero__grid">
+                    <div className="oferta-hero__content">
+                        <span className="hero-eyebrow">Oferta por tempo limitado</span>
+                        <h1 className="oferta-hero__title">Escolha seu Kit e sinta a transformação</h1>
+                        <p className="oferta-hero__subtitle">
+                            Mais do que cuidar da pele. É voltar a se olhar com carinho.
                         </p>
-
-                        {/* Lista de produtos */}
-                        <div className="bg-white/15 p-4 md:p-6 rounded-xl mb-6 md:mb-8 backdrop-blur-md">
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4 text-sm md:text-base font-semibold">
-                                <span>💚</span>
-                                <span>Inclui:</span>
-                            </div>
-                            <div className="text-left text-sm md:text-base leading-loose">
-                                ✓ Esfoliante Facial 100% Rosa Mosqueta<br/>
-                                ✓ Máscara Facial 100% Mulateiro<br/>
-                                ✓ Sabonete Facial Equilibrante<br/>
-                                ✓ Creme Facial Anti-idade com Colágeno e Mulateiro
-                            </div>
+                        <StarRating className="oferta-hero__rating" />
+                        <TrustRibbon variant="dark" className="oferta-hero__trust" />
+                        <div className="oferta-hero__cta">
+                            <CTAButton href="#comprar" variant="inverted" size="large">
+                                Ver ofertas disponíveis
+                            </CTAButton>
                         </div>
+                    </div>
 
-                        {/* Preço */}
-                        <div className="mb-6 md:mb-8 relative">
-                            <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 z-10">
-                                <div className="bg-red-500 text-white text-xs md:text-sm font-bold px-3 py-1 md:px-4 md:py-2 rounded-full shadow-lg transform rotate-12">
-                                    30% OFF
-                                </div>
+                    <div className="oferta-hero__media">
+                        <img
+                            src="/images/kit-mulateiro.png"
+                            alt="Kit de produtos Floralla 100% Mulateiro — creme anti-idade, clareador de manchas e loção"
+                            className="oferta-hero__image"
+                            loading="eager"
+                            fetchPriority="high"
+                        />
+                    </div>
+                </div>
+            </Section>
+
+            <Section background="white" id="comprar">
+                <div className="oferta-page">
+                    <div className="oferta-benefits">
+                        {benefits.map((benefit) => (
+                            <div key={benefit} className="oferta-benefits__item">
+                                <span aria-hidden="true">✓</span>
+                                <span>{benefit}</span>
                             </div>
-                            <div className="text-sm md:text-base opacity-90 mb-1 line-through">
-                                De R$ 631
+                        ))}
+                    </div>
+
+                    <div className="oferta-cards">
+                        <article className="offer-card offer-card--featured">
+                            <div className="offer-card__badge">⭐ MAIS POPULAR</div>
+                            <h2 className="offer-card__title">Kit Facial de Mulateiro</h2>
+                            <p className="offer-card__desc">Ritual completo para rosto — resultados visíveis em 7 dias</p>
+
+                            <ul className="offer-card__includes">
+                                <li>Esfoliante Facial 100% Rosa Mosqueta</li>
+                                <li>Máscara Facial 100% Mulateiro</li>
+                                <li>Sabonete Facial Equilibrante</li>
+                                <li>Creme Facial Anti-idade com Colágeno e Mulateiro</li>
+                            </ul>
+
+                            <div className="offer-card__pricing">
+                                <span className="offer-card__old">De R$ 631,00</span>
+                                <span className="offer-card__price">R$ 449,90</span>
+                                <span className="offer-card__pix">no Pix com desconto extra</span>
+                                <span className="offer-card__installments">ou 3x de R$ 149,97 sem juros</span>
+                                <span className="offer-card__savings">💰 Economia de R$ 181,10</span>
                             </div>
-                            <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-2">
-                                R$ 441,60
+
+                            <CTAButton
+                                href="https://www.belezadafloresta.com.br/produtos/kit-completo-de-mulateiro/"
+                                onClick={() => trackInitiateCheckout({ value: 449.90, currency: 'BRL' })}
+                                variant="inverted"
+                            >
+                                QUERO MEU KIT FACIAL
+                            </CTAButton>
+                            <p className="offer-card__note">🚚 Frete grátis para todo o Brasil</p>
+                        </article>
+
+                        <article className="offer-card">
+                            <h2 className="offer-card__title">Kit Corporal de Mulateiro</h2>
+                            <p className="offer-card__desc">Clareamento natural para virilhas, joelhos, cotovelos e melasma</p>
+
+                            <ul className="offer-card__includes">
+                                <li>Esfoliante Corporal 800g</li>
+                                <li>Creme Hidratante Nutritivo Clareador de Manchas 250g</li>
+                            </ul>
+
+                            <div className="offer-card__pricing">
+                                <span className="offer-card__old">De R$ 310,00</span>
+                                <span className="offer-card__price">R$ 279,90</span>
+                                <span className="offer-card__pix">no Pix com desconto extra</span>
+                                <span className="offer-card__installments">ou 3x de R$ 93,30 sem juros</span>
+                                <span className="offer-card__savings">💰 Economia de R$ 30,10</span>
                             </div>
-                            <div className="text-sm md:text-base opacity-90">
-                                ou 3x de R$ 147,20 SEM JUROS
-                            </div>
+
+                            <CTAButton
+                                href="https://www.belezadafloresta.com.br/produtos/kit-corporal-de-mulateiro/"
+                                onClick={() => trackInitiateCheckout({ value: 279.90, currency: 'BRL' })}
+                            >
+                                QUERO MEU KIT CORPORAL
+                            </CTAButton>
+                            <p className="offer-card__note">🚚 Frete grátis para todo o Brasil</p>
+                        </article>
+                    </div>
+
+                    <div className="oferta-testimonials-highlight">
+                        <p className="oferta-testimonials-highlight__label">Avaliação 4.9/5 — {SATISFIED_CUSTOMERS_LABEL}</p>
+                        <div className="oferta-testimonials-highlight__grid">
+                            {featuredTestimonials.map((item) => (
+                                <TestimonialCard key={item.id} {...item} compact />
+                            ))}
                         </div>
+                    </div>
 
-                        {/* CTA Button */}
-                        <CTAButton 
-                            href="https://www.belezadafloresta.com.br/produtos/kit-completo-de-mulateiro/"
-                            onClick={() => {
-                                trackInitiateCheckout({ value: 441.60, currency: 'BRL' });
-                            }}
-                            variant="inverted"
-                        >
-                            SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
+                    <CountdownTimer />
+
+                    <StockUrgency />
+
+                    <div className="oferta-tip">
+                        <p className="oferta-tip__label">💡 Dica da nossa especialista</p>
+                        <p className="oferta-tip__text">
+                            Para resultados completos, combine o Kit Facial com o Kit Corporal.
+                            Muitas clientes começam com um e depois adicionam o outro para uma transformação total.
+                        </p>
+                    </div>
+
+                    <div className="oferta-guarantee">
+                        <h3>✅ Garantia de Satisfação — 30 dias</h3>
+                        <p>
+                            Se após 30 dias de uso consistente você não sentir melhora clara na sua pele,
+                            oferecemos <strong>50% de desconto no próximo pedido</strong> com orientação dos nossos especialistas.
+                        </p>
+                    </div>
+
+                    <GuaranteeBadges />
+
+                    <div className="oferta-testimonials-full">
+                        <h2>Mais depoimentos de quem já transformou a pele</h2>
+                        <div className="text-testimonials__grid">
+                            {testimonials.map((item) => (
+                                <TestimonialCard key={item.id} {...item} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="oferta-faq">
+                        <h2>Perguntas Frequentes</h2>
+                        <p className="oferta-faq__subtitle">Tire suas dúvidas</p>
+                        <div className="oferta-faq__list">
+                            {faqItems.map((item) => (
+                                <details key={item.q} className="faq-item">
+                                    <summary>{item.q}</summary>
+                                    <p>{item.a}</p>
+                                </details>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="oferta-closing">
+                        <h2>Sua pele mais clara. Sua expressão mais leve. Sua autoestima mais viva.</h2>
+                        <p>
+                            O Kit de Mulateiro foi feito para mulheres que querem olhar para si mesmas
+                            e enxergar mais beleza, mais cuidado e mais confiança.
+                        </p>
+                        <CTAButton href="#comprar" variant="inverted">
+                            QUERO MEU KIT AGORA
                         </CTAButton>
-                        
-                        {/* Texto de apoio */}
-                        <p className="mt-4 text-xs md:text-sm opacity-95 mb-0">
-                            👆 Escolha ideal para quem quer transformação total em 7 dias.
-                        </p>
-                    </div>
-
-                    {/* Oferta 2 - Kit Corporal */}
-                    <div className="flex-1 bg-white rounded-2xl p-6 md:p-8 lg:p-12 shadow-lg border-2 border-secondary">
-                        {/* Título da oferta */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-4 mb-4 md:mb-6 text-base md:text-lg font-semibold text-primary">
-                            <span>🛁</span>
-                            <span className="text-center">KIT CORPORAL DE MULATEIRO</span>
-                        </div>
-
-                        {/* Descrição */}
-                        <p className="text-sm md:text-base text-textLight mb-6 md:mb-8">
-                            Resultados visíveis em apenas 7 dias
-                        </p>
-
-                        {/* Lista de produtos */}
-                        <div className="bg-primary/5 p-4 md:p-6 rounded-xl mb-6 md:mb-8">
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4 text-sm md:text-base font-semibold text-primary">
-                                <span>💚</span>
-                                <span>Inclui:</span>
-                            </div>
-                            <div className="text-left text-sm md:text-base leading-loose text-textLight">
-                                ✓ Esfoliante Corporal 800g<br/>
-                                ✓ Creme Hidratante Nutritivo Clareador de Manchas 250g
-                            </div>
-                        </div>
-
-                        {/* Preço */}
-                        <div className="mb-6 md:mb-8">
-                            <div className="text-sm md:text-base text-textLight mb-1 line-through">
-                                De R$ 310
-                            </div>
-                            <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-2">
-                                R$ 280,00
-                            </div>
-                            <div className="text-sm md:text-base text-textLight">
-                                ou 3x de R$ 93,33 SEM JUROS
-                            </div>
-                        </div>
-
-                        {/* Texto destacado */}
-                        <p className="text-xs md:text-sm text-textLight mb-6 md:mb-8 italic">
-                            ✨ Ideal para quem quer um ritual corporal completo e natural
-                        </p>
-
-                        {/* CTA Button */}
-                        <CTAButton 
-                            href="https://www.belezadafloresta.com.br/produtos/kit-corporal-de-mulateiro/"
-                            onClick={() => {
-                                trackInitiateCheckout({ value: 280.00, currency: 'BRL' });
-                            }}
-                        >
-                            SIM! EU QUERO ME VER NO ESPELHO COM ORGULHO
-                        </CTAButton>
-                        
-                        {/* Texto de apoio */}
-                        <p className="mt-4 text-xs md:text-sm text-textLight mb-0">
-                            👆 Transforme seu corpo com o poder do Mulateiro.
-                        </p>
                     </div>
                 </div>
-
-                {/* Quebra visual antes da dica */}
-                <div className="max-w-3xl mx-auto px-4 md:px-6 my-4 md:my-6">
-                    <p className="text-center text-textLight font-semibold m-0">
-                        💭 Ainda em dúvida entre as duas opções?
-                    </p>
-                </div>
-
-                {/* Dica da Especialista */}
-                <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-4 md:p-6 lg:p-8 rounded-2xl border-l-4 border-primary text-left max-w-3xl mx-auto my-8 md:my-12">
-                    <p className="text-sm md:text-base font-semibold text-primary mb-2 md:mb-3">
-                        💡 Dica da nossa especialista:
-                    </p>
-                    <p className="text-sm md:text-base text-textLight leading-relaxed m-0">
-                        Para resultados completos, combine o Kit Facial com o Kit Corporal. Muitas clientes começam com um e depois adicionam o outro para uma transformação total. Se você quer resultados rápidos e visíveis em todo o corpo, <strong className="text-primary">ambos os kits são sua melhor escolha</strong>.
-                    </p>
-                </div>
-
-                {/* Garantia */}
-                <div className="mt-8 md:mt-12 p-4 md:p-6 lg:p-8 bg-primary/5 rounded-2xl max-w-3xl mx-auto">
-                    <p className="text-xs md:text-sm text-textLight mb-2 md:mb-3">
-                        🔒 Compra 100% segura e protegida
-                    </p>
-                    <p className="text-sm md:text-base text-primary font-semibold mb-2">
-                        ✅ Garantia de Satisfação com Continuidade Exclusiva
-                    </p>
-                    <p className="text-xs md:text-sm text-textLight leading-relaxed m-0">
-                        Se após 30 dias de uso consistente você não sentir melhora clara na sua pele, oferecemos <strong>50% de desconto no próximo pedido</strong> com orientação direta dos nossos especialistas.
-                    </p>
-                </div>
-
-                    {/* Mini FAQ */}
-                    <div className="mt-8 md:mt-12 max-w-3xl mx-auto px-4 md:px-6">
-                        <h3 className="text-primary mb-4 md:mb-6 text-center text-xl md:text-2xl font-bold">
-                            ❓ Ainda com dúvidas?
-                        </h3>
-
-                        <div className="flex flex-col gap-4 md:gap-6">
-                            <div className="text-left bg-white p-4 md:p-6 rounded-xl shadow-md border-l-4 border-primary hover:shadow-lg transition-shadow">
-                                <p className="m-0 font-bold text-primary text-base md:text-lg mb-3 flex items-center gap-2">
-                                    <span className="text-2xl">🧴</span>
-                                    <span>O produto é indicado para todos os tipos de pele?</span>
-                                </p>
-                                <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
-                                    Sim! <strong className="text-primary">100% natural</strong>, testado dermatologicamente e seguro até para <strong className="text-primary">peles sensíveis</strong>.
-                                </p>
-                            </div>
-
-                            <div className="text-left bg-white p-4 md:p-6 rounded-xl shadow-md border-l-4 border-primary hover:shadow-lg transition-shadow">
-                                <p className="m-0 font-bold text-primary text-base md:text-lg mb-3 flex items-center gap-2">
-                                    <span className="text-2xl">⏰</span>
-                                    <span>Preciso usar os 4 produtos todos os dias?</span>
-                                </p>
-                                <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
-                                    O ritual completo pode ser <strong className="text-primary">adaptado à sua rotina</strong>. Você pode usar todos os dias ou alternar conforme sua necessidade.
-                                </p>
-                            </div>
-
-                            <div className="text-left bg-white p-4 md:p-6 rounded-xl shadow-md border-l-4 border-primary hover:shadow-lg transition-shadow">
-                                <p className="m-0 font-bold text-primary text-base md:text-lg mb-3 flex items-center gap-2">
-                                    <span className="text-2xl">📦</span>
-                                    <span>Em quanto tempo recebo meu kit?</span>
-                                </p>
-                                <p className="mt-2 md:mt-3 mb-0 text-textLight leading-relaxed text-sm md:text-base">
-                                    Em até <strong className="text-primary">7 dias úteis</strong>, com rastreamento para todo o Brasil.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </Section>
+            </Section>
+        </>
     );
 }

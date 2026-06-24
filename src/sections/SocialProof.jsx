@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import Section from '../components/Section';
+import LiveViewers from '../components/LiveViewers';
+import CTAButton from '../components/CTAButton';
+import {
+    INSTAGRAM_URL,
+    INSTAGRAM_HANDLE,
+    SATISFIED_CUSTOMERS_LABEL,
+    SATISFIED_CUSTOMERS_SHORT,
+} from '../data/socialProof';
 
 const SocialProof = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -165,6 +173,8 @@ const SocialProof = () => {
         if (!isAutoPlaying) return;
 
         const interval = setInterval(() => {
+            setLoadedVideos(new Set());
+            setPlayingVideos(new Set());
             setCurrentIndex((prevIndex) =>
                 prevIndex === videos.length - 1 ? 0 : prevIndex + 1
             );
@@ -173,33 +183,15 @@ const SocialProof = () => {
         return () => clearInterval(interval);
     }, [isAutoPlaying, videos.length]);
 
-    // Descarregar vídeos que não estão mais visíveis
     useEffect(() => {
-        const visibleVideoIds = new Set();
-        const totalVideos = videos.length;
-
-        // Adicionar os IDs dos vídeos visíveis (prev, current, next)
-        for (let i = -1; i <= 1; i++) {
-            let index = currentIndex + i;
-            if (index < 0) index = totalVideos + index;
-            if (index >= totalVideos) index = index - totalVideos;
-            visibleVideoIds.add(videos[index].youtubeId);
-        }
-
-        // Remover vídeos que não estão mais visíveis
-        setLoadedVideos(prev => {
-            const newSet = new Set();
-            prev.forEach(videoId => {
-                if (visibleVideoIds.has(videoId)) {
-                    newSet.add(videoId);
-                }
-            });
-            return newSet;
-        });
-    }, [currentIndex, videos]);
+        setLoadedVideos(new Set());
+        setPlayingVideos(new Set());
+    }, [currentIndex]);
 
     const goToSlide = useCallback((index) => {
         requestAnimationFrame(() => {
+            setLoadedVideos(new Set());
+            setPlayingVideos(new Set());
             setCurrentIndex(index);
             setIsAutoPlaying(false);
         });
@@ -207,6 +199,8 @@ const SocialProof = () => {
 
     const nextSlide = useCallback(() => {
         requestAnimationFrame(() => {
+            setLoadedVideos(new Set());
+            setPlayingVideos(new Set());
             setCurrentIndex((prevIndex) =>
                 prevIndex === videos.length - 1 ? 0 : prevIndex + 1
             );
@@ -216,6 +210,8 @@ const SocialProof = () => {
 
     const prevSlide = useCallback(() => {
         requestAnimationFrame(() => {
+            setLoadedVideos(new Set());
+            setPlayingVideos(new Set());
             setCurrentIndex((prevIndex) =>
                 prevIndex === 0 ? videos.length - 1 : prevIndex - 1
             );
@@ -257,45 +253,51 @@ const SocialProof = () => {
                     <p className="text-base md:text-lg text-textLight max-w-2xl mx-auto">
                         Aqui você verá resultados reais, sem cortes, sem edição. A satisfação do cliente é nítida!
                     </p>
+                    <LiveViewers />
+                    <div className="mt-md">
+                        <CTAButton href="/oferta">
+                            QUERO CLAREAR MINHA PELE AGORA
+                        </CTAButton>
+                    </div>
                     <a
-                        href="https://www.instagram.com/belezadaflorestaoficiall/"
+                        href={INSTAGRAM_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-sm mt-md px-lg py-sm bg-gradient-to-r from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] text-white rounded-full font-semibold text-sm shadow-md cursor-pointer transition-all duration-base hover:-translate-y-0.5 no-underline"
+                        className="instagram-pill-link"
                     >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
-                        <span>Siga @belezadaflorestaoficiall — 200 mil+ pessoas já seguem</span>
+                        <span>Siga {INSTAGRAM_HANDLE} — {SATISFIED_CUSTOMERS_LABEL}</span>
                     </a>
                 </div>
 
-                {/* Instagram Highlights */}
                 <div className="mt-xl mb-2xl max-w-4xl mx-auto">
-                    <div className="bg-gradient-to-br from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] p-6 md:p-8 rounded-2xl shadow-lg text-center">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                    <div className="instagram-invite">
+                        <div className="instagram-invite__header">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white" aria-hidden="true">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
-                            <h3 className="text-xl md:text-2xl font-bold text-white mb-0">
-                                ✨ Dúvida? Vai nos Stories e vê com seus próprios olhos
+                            <h3 className="instagram-invite__title">
+                                Conheça nossa comunidade no Instagram
                             </h3>
                         </div>
-                        <p className="text-white/90 mb-4 text-base md:text-lg leading-relaxed">
-                            Tem mais de <strong className="text-white">60 provas reais</strong>, vídeos, depoimentos e bastidores do Kit Mulateiro nos nossos stories.
+                        <p className="instagram-invite__text">
+                            Mais de <strong>500 mil clientes satisfeitas</strong> já confiam na Beleza da Floresta.
+                            No nosso perfil você encontra depoimentos, resultados reais e o dia a dia do Kit Mulateiro.
                         </p>
-                        <p className="text-white/90 mb-6 text-base md:text-lg leading-relaxed font-semibold">
+                        <p className="instagram-invite__text instagram-invite__text--emphasis">
                             Essas mulheres tiveram a pele transformada. Chegou a hora de dar uma chance para a SUA.
                         </p>
                         <a
-                            href="https://www.instagram.com/stories/highlights/18049855721425478/"
+                            href={INSTAGRAM_URL}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#bc1888] rounded-full font-bold text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-base hover:-translate-y-1 no-underline"
+                            className="instagram-invite__btn"
                         >
-                            <span>▶️ Clique para ver mais clientes satisfeitas</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <polyline points="9 18 15 12 9 6"></polyline>
+                            <span>Seguir {INSTAGRAM_HANDLE}</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6" />
                             </svg>
                         </a>
                     </div>
@@ -403,8 +405,8 @@ const SocialProof = () => {
 
                 <div className="social-stats">
                     <div className="stat-item">
-                        <div className="stat-number">200k</div>
-                        <div className="stat-label">Seguidores no Instagram</div>
+                        <div className="stat-number">{SATISFIED_CUSTOMERS_SHORT}</div>
+                        <div className="stat-label">Clientes satisfeitas</div>
                     </div>
                     <div className="stat-item">
                         <div className="stat-number">20+ anos</div>

@@ -20,7 +20,7 @@ export default function Objections() {
                             "Será que funciona mesmo?"
                         </h3>
                         <p className="text-textLight leading-relaxed m-0">
-                            Essa dúvida é bem comum, mas podemos garantir pra você: quem usou, gostou, recomendou e continua recomendando pra outras mulheres! Veja nossas provas sociais — temos mais de 50 vídeos em nosso Instagram e no nosso canal do YouTube, com histórias inspiradoras de mulheres que conseguiram restaurar sua autoestima e sua pele com a ajuda do mulateiro!!
+                            Essa dúvida é bem comum, mas podemos garantir pra você: quem usou, gostou, recomendou e continua recomendando pra outras mulheres! Mais de 500 mil clientes satisfeitas já comprovaram — veja nossas provas sociais no Instagram, no YouTube e nesta página.
                         </p>
                     </div>
 
