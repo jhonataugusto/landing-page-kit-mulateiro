@@ -112,7 +112,7 @@ export default function FinalCTA() {
                             </div>
 
                             <CTAButton
-                                href="https://www.belezadafloresta.com.br/produtos/kit-completo-de-mulateiro/"
+                                href="https://belezadafloresta.com.br/checkout/?montarCarrinho=20:1"
                                 onClick={() => trackInitiateCheckout({ value: 449.90, currency: 'BRL' })}
                                 variant="inverted"
                             >
@@ -139,7 +139,7 @@ export default function FinalCTA() {
                             </div>
 
                             <CTAButton
-                                href="https://www.belezadafloresta.com.br/produtos/kit-corporal-de-mulateiro/"
+                                href="https://belezadafloresta.com.br/checkout/?montarCarrinho=15:1"
                                 onClick={() => trackInitiateCheckout({ value: 279.90, currency: 'BRL' })}
                             >
                                 QUERO MEU KIT CORPORAL
