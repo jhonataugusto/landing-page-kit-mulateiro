@@ -118,7 +118,6 @@ export default function FinalCTA() {
                             >
                                 QUERO MEU KIT FACIAL
                             </CTAButton>
-                            <p className="offer-card__note">🚚 Frete grátis para todo o Brasil</p>
                         </article>
 
                         <article className="offer-card">
@@ -144,7 +143,6 @@ export default function FinalCTA() {
                             >
                                 QUERO MEU KIT CORPORAL
                             </CTAButton>
-                            <p className="offer-card__note">🚚 Frete grátis para todo o Brasil</p>
                         </article>
                     </div>
 

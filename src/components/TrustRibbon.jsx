@@ -1,10 +1,9 @@
 import React from 'react';
-import { IconCheck, IconHeart, IconLeaf, IconShield, IconTruck } from './icons';
+import { IconCheck, IconHeart, IconShield } from './icons';
 
 const badges = [
     { Icon: IconShield, label: 'Aprovado ANVISA' },
     { Icon: IconHeart, label: 'Cruelty Free' },
-    { Icon: IconTruck, label: 'Frete Grátis Brasil' },
     { Icon: IconCheck, label: 'Garantia 30 dias' },
 ];
 
