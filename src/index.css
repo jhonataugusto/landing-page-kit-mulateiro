@@ -454,12 +454,12 @@
     @apply text-center my-8 p-6 rounded-2xl bg-white border border-urgency/20 shadow-card;
   }
   .countdown-timer__label { @apply text-urgency font-semibold mb-4 m-0 text-sm; }
-  .countdown-timer__digits { @apply flex items-center justify-center gap-3; }
+  .countdown-timer__digits { @apply flex items-center justify-center gap-2 sm:gap-3; }
   .countdown-timer__block {
-    @apply flex flex-col items-center bg-cream rounded-xl px-5 py-3 min-w-[76px] border border-primary/10;
+    @apply flex flex-col items-center bg-cream rounded-xl px-3 sm:px-5 py-3 min-w-[62px] sm:min-w-[76px] border border-primary/10;
   }
   .countdown-timer__value {
-    @apply text-3xl font-bold text-primary leading-none tabular-nums;
+    @apply text-2xl sm:text-3xl font-bold text-primary leading-none tabular-nums;
   }
   .countdown-timer__unit { @apply text-[10px] text-textLight font-semibold mt-1 uppercase tracking-wider; }
   .countdown-timer__sep { @apply text-2xl font-bold text-urgency tabular-nums; }

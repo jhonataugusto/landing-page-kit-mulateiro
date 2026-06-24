@@ -7,11 +7,12 @@ function getTimeLeft() {
     const diff = endOfDay - now;
 
     if (diff <= 0) {
-        return { minutes: 0, seconds: 0 };
+        return { hours: 0, minutes: 0, seconds: 0 };
     }
 
     return {
-        minutes: Math.floor(diff / 60000),
+        hours: Math.floor(diff / 3600000),
+        minutes: Math.floor((diff % 3600000) / 60000),
         seconds: Math.floor((diff % 60000) / 1000),
     };
 }
@@ -33,6 +34,11 @@ export default function CountdownTimer({ label = 'Oferta expira em:' }) {
         <div className="countdown-timer">
             <p className="countdown-timer__label">⏰ {label}</p>
             <div className="countdown-timer__digits">
+                <div className="countdown-timer__block">
+                    <span className="countdown-timer__value">{pad(timeLeft.hours)}</span>
+                    <span className="countdown-timer__unit">Hora</span>
+                </div>
+                <span className="countdown-timer__sep">:</span>
                 <div className="countdown-timer__block">
                     <span className="countdown-timer__value">{pad(timeLeft.minutes)}</span>
                     <span className="countdown-timer__unit">Min</span>

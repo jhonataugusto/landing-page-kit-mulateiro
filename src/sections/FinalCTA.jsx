@@ -36,10 +36,6 @@ const faqItems = [
         q: 'Qual o prazo de entrega?',
         a: 'De 3 a 7 dias úteis para todo o Brasil, com código de rastreamento.',
     },
-    {
-        q: 'Posso trocar ou devolver?',
-        a: 'Sim. Garantia de 30 dias — se não ficar satisfeita, devolvemos seu dinheiro.',
-    },
 ];
 
 const benefits = [
@@ -174,10 +170,10 @@ export default function FinalCTA() {
                     </div>
 
                     <div className="oferta-guarantee">
-                        <h3>✅ Garantia de Satisfação — 30 dias</h3>
+                        <h3>✅ Compra segura e suporte de uso</h3>
                         <p>
-                            Se após 30 dias de uso consistente você não sentir melhora clara na sua pele,
-                            oferecemos <strong>50% de desconto no próximo pedido</strong> com orientação dos nossos especialistas.
+                            Após a compra, você recebe orientação para usar seu kit da forma correta
+                            e aproveitar melhor o ritual de cuidado com o Mulateiro.
                         </p>
                     </div>
 
